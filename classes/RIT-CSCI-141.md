@@ -1,1 +1,0 @@
-# Computer Class #1
