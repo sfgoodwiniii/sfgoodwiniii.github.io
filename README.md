@@ -15,3 +15,9 @@
 
 
 Link my overleaf somewhere in here.
+
+
+
+
+Animation Scroll: https://www.youtube.com/watch?v=T33NN_pPeNI
+Flexbox: https://www.youtube.com/shorts/jlvwSorkdIo
