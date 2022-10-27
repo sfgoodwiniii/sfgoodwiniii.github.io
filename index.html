@@ -1,13 +1,111 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <!-- <script defer src="js/index.js"></script> -->
+
+        <style>
+            .overlay {
+              position: absolute;
+              bottom: 100%;
+              left: 0;
+              right: 0;
+              overflow: hidden;
+              width: 100%;
+              height:0;
+              transition: .5s ease;
+            }
+
+            .overlay > h3 {
+                color: white;
+                position: relative;
+                text-align: center;
+            }
+
+            .overlay > p {
+                color: white;
+                position: relative;
+                text-align: left;
+            }
+            
+            .tile:hover .overlay {
+              bottom: 0;
+              height: 100%;
+            }
+            
+            .text {
+              color: white;
+              font-size: 20px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              text-align: center;
+            }
+        </style>
     </head>
     <body>
+        
+
+
         <h1>Hello! Welcome to my page!</h1>
 		<p>I'm hosted with GitHub Pages.</p>
         <a href="resume">My resume</a>
         <a href="classes">My classes</a>
         <a href="projects">My projects</a>
 		<p>Hi Stacey! :)</p>
+        
+        <div class="grid">
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/Gen-Resume-Python">
+                    <img src="img/default.png" alt="">
+                </a>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/sfgoodwiniii.github.io">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/sfgoodwiniii">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/Bot-Discord-Console-Template">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/Bot-Discord-Client-Template">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/Simulation-Physics-Droplet">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+
+            <div class="tile">
+                <a href="https://github.com/sfgoodwiniii/Windows-Code-Tab">
+                    <img src="img/default.png" alt="">
+                <a\>
+            </div>
+        
+        </div>
     </body>
+
+    
 </html>
+
+
+
