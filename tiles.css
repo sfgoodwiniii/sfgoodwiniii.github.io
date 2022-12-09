@@ -1,6 +1,6 @@
 :root {
     --tile-default-color: slategray;
-    --tile-size: 300px;
+    --tile-size: 250px;
     --tile-margin: 1.5rem;
     --tile-bevel: 25px;
     --tile-shadow: 10px;
