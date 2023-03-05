@@ -1,8 +1,4 @@
-import createGrid from './tiles.js';
-
-
-const tilegrid = document.querySelector('.tilegrid');
-const data = [
+[
     {
         "header": "LinkedIn",
         "description": "Where I keep my up-to-date work information and other related subjects.",
@@ -25,5 +21,3 @@ const data = [
         "alt": "Guitar Tabs"
     }
 ]
-
-createGrid(tilegrid, data)

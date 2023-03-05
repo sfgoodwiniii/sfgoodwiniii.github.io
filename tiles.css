@@ -14,7 +14,13 @@
     --tile-text-time: 1000ms;
 }
 
-.grid { display: flex; flex-flow: row wrap; justify-content: center; }
+.grid > .blanktile {
+    position: relative;
+    width: var(--tile-size);
+    height: calc(var(--tile-size) + var(--tile-shadow));
+    margin: var(--tile-margin);
+    border-radius: var(--tile-bevel);
+}
 
 .grid > .tile {
     position: relative;
