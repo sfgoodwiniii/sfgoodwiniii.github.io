@@ -1,5 +1,5 @@
-import data2 from 'data.json';
-console.log(data2);
+import data from 'data.json';
+console.log(data);
 
 
 // fetch('https://server.com/data.json')
