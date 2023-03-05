@@ -1,9 +1,9 @@
 :root {
     --tile-default-color: slategray;
-    --tile-size: 250px;
-    --tile-margin: 1.5rem;
-    --tile-bevel: 25px;
-    --tile-shadow: 10px;
+    --tile-size: 200px;
+    --tile-margin: 1rem;
+    --tile-bevel: 20px;
+    --tile-shadow: 8px;
 
     --tile-scale-on-hover: 1.1;
     --tile-scale-time: 250ms;
@@ -47,6 +47,7 @@
 }
 
 .grid > .tile > .overlay> h1 {
+    font-size: large;
     color: white;
     margin-top: 0%;
     opacity: 0;
@@ -60,7 +61,9 @@
     transform: translate(0px, 0);
 }
 
+
 .grid > .tile > .overlay> p {
+    font-size: small;
     color: white;
     opacity: 0;
     transition: 0s;
