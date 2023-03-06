@@ -1,3 +1,13 @@
+function generateTilesGrid(div_id, tiles_data_url) {
+    const tilegrid = document.querySelector("#" + div_id);
+
+    fetch(tiles_data_url)
+        .then((response) => response.json())
+        .then((data) => createGrid(tilegrid, data));
+}
+
+
+
 // create the grid
 function createGrid(tilegrid, data) {
     // Switch case chooser for the amount of tiles
@@ -70,7 +80,6 @@ function blockMoreThan12Tiles(tilegrid, data) {
     }
 }
 
-
 // add tiles to a line
 function createRow(tilegrid, data) {
 
@@ -90,7 +99,6 @@ function createRow(tilegrid, data) {
     // add row to the grid
     tilegrid.appendChild(row)
 }
-
 
 // a function that takes in a dictionary and returns a tile
 function createTile(data) {
