@@ -1,4 +1,13 @@
-function generateTilesGrid(div_id, tiles_data_url) {
+// // Fetch style JSON file
+// let styledata = fetch("./_TILES/tiles-styles.json").then((response) => response.json())
+
+
+
+
+
+
+// Generates a grid of tiles from a JSON file
+function generateTilesGrid(div_id, tiles_data_url, style) {
     const tilegrid = document.querySelector("#" + div_id);
 
     fetch(tiles_data_url)
@@ -8,7 +17,7 @@ function generateTilesGrid(div_id, tiles_data_url) {
 
 
 
-// create the grid
+// Create the grid
 function createGrid(tilegrid, data) {
     // Switch case chooser for the amount of tiles
     switch(data.length){
@@ -68,13 +77,13 @@ function blockMoreThan12Tiles(tilegrid, data) {
         if (segment.length == 4) {
             createRow(tilegrid, segment);
         }
-        if (segment.length == 3) {
+        else if (segment.length == 3) {
             createRow(tilegrid, [...segment, null]);
         }
-        if (segment.length == 2) {
+        else if (segment.length == 2) {
             createRow(tilegrid, [...segment, null, null]);
         }
-        if (segment.length == 1) {
+        else if (segment.length == 1) {
             createRow(tilegrid, [...segment, null, null, null]);
         }
     }
@@ -113,7 +122,7 @@ function createTile(data) {
     // create a new image element and add it to the tile
     var image = document.createElement('img');
         image.setAttribute('src', data.image);
-        image.setAttribute('alt', data.alt);
+        image.setAttribute('alt', data["image-alt"]);
 
     // create a new h1 element and add it to the overlay
     var header = document.createElement('h1');

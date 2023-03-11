@@ -1,0 +1,1 @@
+generateTilesGrid("mainGrid", './tiles.json', "default")
