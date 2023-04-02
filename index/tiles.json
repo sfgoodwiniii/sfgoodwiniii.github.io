@@ -26,5 +26,12 @@
         "link": "https://github.com/stanieldev",
         "image": "index/assets/github.png",
         "image-alt": "GitHub"
+    },
+    {
+        "header": "Animated Menu",
+        "description": "An updated version of the main index page with new animations.",
+        "link": "/animated",
+        "image": "animated/tech.png",
+        "image-alt": "Animated Menu"
     }
 ]
