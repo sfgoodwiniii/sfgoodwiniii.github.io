@@ -1,24 +1,23 @@
-// // Fetch style JSON file
-// let styledata = fetch("./_TILES/tiles-styles.json").then((response) => response.json())
-
-
-
-
-
-
 // Generates a grid of tiles from a JSON file
 function generateTilesGrid(div_id, tiles_data_url, style) {
     const tilegrid = document.querySelector("#" + div_id);
 
     fetch(tiles_data_url)
         .then((response) => response.json())
-        .then((data) => createGrid(tilegrid, data));
+        .then((data) => createGrid(tilegrid, data, style));
 }
 
 
 
 // Create the grid
-function createGrid(tilegrid, data) {
+function createGrid(tilegrid, data, style) {
+
+
+
+
+
+
+
     // Switch case chooser for the amount of tiles
     switch(data.length){
         case 1:
