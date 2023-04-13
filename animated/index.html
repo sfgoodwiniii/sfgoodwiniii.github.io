@@ -2,13 +2,41 @@
 <html>
 
 <head>
-    <link href="anime.css" rel="stylesheet" type="text/css">
-    <script src="anime.js" defer></script>
+    <link href="_card.css" rel="stylesheet" type="text/css">
+    <link href="cards.css" rel="stylesheet" type="text/css">
+    <script src="animated.js"></script>
+
+    <style>
+        body {
+            background-color: #2c3e50;
+            overflow: hidden; /* Hide scrollbars */
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Corner Cards -->
-    <a class="card ul-default clickable half-brightness" id="card-ul">
+    <a class="card" id="card-ul" height="350px" width="250px" dx="-400px" dy="400px"></a>
+    <a class="card" id="card-ur" height="350px" width="250px" dx="400px" dy="400px"></a>
+    <a class="card" id="card-bl" height="350px" width="250px" dx="-400px" dy="-400px"></a>
+    <a class="card" id="card-br" height="350px" width="250px" dx="400px" dy="-400px"></a>
+    <a class="card" id="card-cl" height="350px" width="250px" dx="0px" dy="0px"></a>
+    <a class="card" id="card-cr" height="350px" width="250px" dx="0px" dy="0px"></a>
+    <a class="card" id="shadow"  height="350px" width="250px" dx="0px" dy="0px"></a>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- Corner Cards -->
+    <!-- <a id="card-ul" class="card">
         <img src="linkedin.png" alt="My profile picture" style="border-radius: 50%;">
         <h1>Linked In</h1>
         <hr>
@@ -31,17 +59,14 @@
         <h1>Resume</h1>
         <hr>
         <p>Academic</p>
-    </a>
+    </a> -->
 
     <!-- Center Cards -->
-    <a class="card center-left-0" id="card-cr"></a>
+    <!-- <a class="card center-left-0" id="card-cr"></a>
     <a class="card center-left-0" id="shadow"></a>
     <a class="card center-left-0" id="card-cl">
         <img src="tech.png" alt="My profile picture" style="border-radius: 50%;" >
         <h1>Stanley <br> Goodwin</h1>
         <hr>
         <p>Physicist</p>
-    </a>
-</body>
-
-</html>
+    </a> -->

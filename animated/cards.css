@@ -1,0 +1,29 @@
+#shadow {
+    background-color: #1e2225;
+    opacity: 50%;
+    top: 50%;
+}
+
+#card-cl {
+    background-color: tan;
+}
+
+#card-cr {
+    background-color: rgb(173, 153, 125);
+}
+
+#card-ul {
+    background-color: tan;
+}
+
+#card-ur {
+    background-color: tan;
+}
+
+#card-bl {
+    background-color: tan;
+}
+
+#card-br {
+    background-color: tan;
+}
