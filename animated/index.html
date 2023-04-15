@@ -4,7 +4,7 @@
 <head>
     <link href="_card.css" rel="stylesheet" type="text/css">
     <link href="cards.css" rel="stylesheet" type="text/css">
-    <script src="animated.js"></script>
+    <script src="animated.js" defer></script>
 
     <style>
         body {
@@ -15,58 +15,38 @@
 </head>
 
 <body>
-    <a class="card" id="card-ul" height="350px" width="250px" dx="-400px" dy="400px"></a>
-    <a class="card" id="card-ur" height="350px" width="250px" dx="400px" dy="400px"></a>
-    <a class="card" id="card-bl" height="350px" width="250px" dx="-400px" dy="-400px"></a>
-    <a class="card" id="card-br" height="350px" width="250px" dx="400px" dy="-400px"></a>
-    <a class="card" id="card-cl" height="350px" width="250px" dx="0px" dy="0px"></a>
-    <a class="card" id="card-cr" height="350px" width="250px" dx="0px" dy="0px"></a>
-    <a class="card" id="shadow"  height="350px" width="250px" dx="0px" dy="0px"></a>
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-<!-- Corner Cards -->
-    <!-- <a id="card-ul" class="card">
+    <a class="card" id="card-ul" dx="-400px" dy="400px" height="350px" width="250px">
         <img src="linkedin.png" alt="My profile picture" style="border-radius: 50%;">
         <h1>Linked In</h1>
         <hr>
         <p>Professional</p>
     </a>
-    <a class="card ur-default clickable half-brightness" id="card-ur">
+    <a class="card" id="card-ur" dx="400px" dy="400px" height="350px" width="250px">
         <img src="github.png" alt="My profile picture" style="border-radius: 50%;">
         <h1>GitHub</h1>
         <hr>
         <p>Programmer</p>
     </a>
-    <a class="card bl-default clickable half-brightness" id="card-bl">
+    <a class="card" id="card-bl" dx="-400px" dy="-400px" height="350px" width="250px">
         <img src="guitar.jpg" alt="My profile picture" style="border-radius: 50%;">
         <h1>Guitar <br> Tabs</h1>
         <hr>
         <p>Musician</p>
     </a>
-    <a class="card br-default clickable half-brightness" id="card-br">
+    <a class="card" id="card-br" dx="400px" dy="-400px" height="350px" width="250px">
         <img src="resume.jpg" alt="My profile picture" style="border-radius: 50%;">
         <h1>Resume</h1>
         <hr>
         <p>Academic</p>
-    </a> -->
-
-    <!-- Center Cards -->
-    <!-- <a class="card center-left-0" id="card-cr"></a>
-    <a class="card center-left-0" id="shadow"></a>
-    <a class="card center-left-0" id="card-cl">
+    </a>
+    <a class="card" id="card-cr" dx="0px" dy="0px" height="350px" width="250px"></a>
+    <a class="card" id="shadow"  dx="0px" dy="0px" height="350px" width="250px"></a>
+    <a class="card" id="card-cl" dx="0px" dy="0px" height="350px" width="250px">
         <img src="tech.png" alt="My profile picture" style="border-radius: 50%;" >
         <h1>Stanley <br> Goodwin</h1>
         <hr>
         <p>Physicist</p>
-    </a> -->
+    </a>
+</body>
+
+</html>
