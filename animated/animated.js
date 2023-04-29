@@ -2,17 +2,16 @@
 // This file contains the JavaScript code for the animated page.
 
 
-// Global variables
-
-var currentCard = null;
-var screenShifted = false;
-var cards = {};
-
-
 // Universal functions
 function calc(string) { return `calc(${string})`; }
-function sCalc(string) { return string.substring(5, string.length-1); }
+function sCalc(string) { return string.substring(5, string.length-1); } // Strip calc function
 function sleep(milliseconds) { return new Promise(resolve => setTimeout(resolve, milliseconds)); }
+
+
+// Global variables
+var cards = {};
+slideFactor = 0.65;
+
 
 
 // Card class
@@ -21,16 +20,25 @@ class Card {
     // Static HTML Getters
     get html() { return this.HTML; }
     get id() { return this.HTML.id; }
-
-    // Style Getters and Setters
-    get width() { return this.HTML.style.width; }
-    set width(value) { this.HTML.style.width = value; }
-    get height() { return this.HTML.style.height; }
-    set height(value) { this.HTML.style.height = value; }
     get originX() { return `50% - ${this.width}/2`; }
     get originY() { return `50% - ${this.height}/2`; }
-    get x_0() { return this.HTML.getAttribute("dx"); }
-    get y_0() { return this.HTML.getAttribute("dy"); }
+    get currentX() { return sCalc(this.HTML.style.left); }
+    get currentY() { return sCalc(this.HTML.style.top); }
+
+    // Dynamic HTML Getters
+    get width() { return this.HTML.style.width; }
+    get height() { return this.HTML.style.height; }
+    get defaultX() { return this.HTML.getAttribute("dx"); }
+    get defaultY() { return this.HTML.getAttribute("dy"); }
+    get borderRadius() { return this.HTML.style.borderRadius; }
+
+    // Dynamic HTML Setters
+    set width(value) { this.HTML.style.width = value; }
+    set height(value) { this.HTML.style.height = value; }
+    set defaultX(value) { this.HTML.setAttribute("dx", value); }
+    set defaultY(value) { this.HTML.setAttribute("dy", value); }
+    set borderRadius(value) { this.HTML.style.borderRadius = value; }
+
 
     // Constructor
     constructor(element) {
@@ -38,130 +46,113 @@ class Card {
         // Set the HTML element
         this.HTML = element;
 
-        // Reading the attributes
-        var _width = element.getAttribute("width");
-        var _height = element.getAttribute("height");
-        var _offsetX = element.getAttribute("dx");
-        var _offsetY = element.getAttribute("dy");
-        var _originX = `50% - ${_width}/2`;
-        var _originY = `50% - ${_height}/2`;
-
-        // Modifying the HTML element
-        element.style.width = _width;
-        element.style.height = _height;
-        element.style.left = calc(`${_originX} + ${_offsetX}`);
-        element.style.top = calc(`${_originY} + ${_offsetY} * (-1)`);
-
-        // Delete the attributes
-        element.removeAttribute("height");
+        // Swapping the width and height attributes with the style attributes
+        element.style.width = element.getAttribute("width");
         element.removeAttribute("width");
+        element.style.height = element.getAttribute("height");
+        element.removeAttribute("height");
+
+        // Add shadow and clickability
+        if (element.getAttribute("clickable") == "true") {
+            this.HTML.style.filter = "brightness(50%)";
+            this.HTML.style.cursor = "pointer";
+        }
+
+        // Set the default position of the card
+        this.returnToDefaultPosition("0s");
         
         // Print success message
         console.debug("Successfully created card: " + element.id);
     }
 
+
+    // Reset the card to its default position
+    returnToDefaultPosition(dt) { this.move(this.defaultX, this.defaultY, dt, true); }
+
     // Move the card to a new position
-    move(dx, dy, dt, transition=true, absolute=false) {
+    move(dx, dy, dt, absolute=false) {
 
-        // If absolute, reset card first
-        if (absolute) { this.reset(); }
-
-        // Enable or disable transition
-        if (!transition) { this.HTML.style.transition = ""; }
-        else { this.HTML.style.transition = `all ${dt} cubic-bezier( 0.62, 0.17, 0.31, 0.87 )`; }
-
-        // Read current position
-        var x = sCalc(this.HTML.style.left);
-        var y = sCalc(this.HTML.style.top);
+        // Find the coordinates to set as the origin
+        var x = absolute ? this.originX : this.currentX;
+        var y = absolute ? this.originY : this.currentY;
 
         // Move the card
+        this.HTML.style.transition = `all ${dt} cubic-bezier( 0.62, 0.17, 0.31, 0.87 )`
         this.HTML.style.left = calc(`${x} + ${dx}`);
-        this.HTML.style.top = calc(`${y} + ${dy} * (-1)`);
+        this.HTML.style.top  = calc(`${y} + ${dy} * (-1)`);
     }
 
-    // Reset the card to its original position
-    reset() {
-        var dx = this.HTML.getAttribute("dx");
-        var dy = this.HTML.getAttribute("dy");
-        this.HTML.style.left = calc(`${this.originX} + ${dx}`);
-        this.HTML.style.top = calc(`${this.originY} + ${dy} * (-1)`);
+    // Delete the card
+    delete() {
+        this.HTML.remove();
+        delete this;
     }
+
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-// Movement utility functions
-function moveToPerspective(element, dt, transition=true) {
-    var perspective = cards[element.id];
-    for (var card of Object.values(cards)) {
-        card.move(`${perspective.x_0} * (-1)`, `${perspective.y_0} * (-1)`, dt, transition, true);
-    }
-    screenShifted = true;
-}
-
-function resetPerspective(dt, transition=true) {
-    for (var card of Object.values(cards)) {
-        card.reset();
-    }
-    screenShifted = true;
-}
-
-
-
-// Page movement event listeners
-// Event listener for card clicked
+// Perspective animations
+var currentCard = null;
+var isAnimating = false;
 document.addEventListener('click', function(event) {
 
     // If the intro animation is not finished, return
     if (!introFinished) { return; }
 
-    // If the card is clicked again, return
-    if (event.target.id == currentCard) { return; }
+    // If the animation is already running, return
+    if(isAnimating) return;
+    isAnimating = true;
+    setTimeout(() => isAnimating = false, 750);
 
-
-
-    selectedCard = cards[event.target.id];
-
-
-
-    switch (event.target.id) {
-        case "card-ul":
-            moveToPerspective(event.target, "1.0s");
-            currentCard = "card-ul";
-            break;
-        case "card-ur":
-            moveToPerspective(event.target, "1.0s");
-            currentCard = "card-ur";
-            break;
-        case "card-bl":
-            moveToPerspective(event.target, "1.0s");
-            currentCard = "card-bl";
-            break;
-        case "card-br":
-            moveToPerspective(event.target, "1.0s");
-            currentCard = "card-br";
-            break;
-        default:
-            resetPerspective("1.0s");
-            currentCard = null;
-            screenShifted = false;
-            break;
-    }
+    // Shift perspectives
+    var isClickable = event.target.getAttribute("clickable") == "true";
+    if (!isClickable) { resetPerspective("1.0s"); }
+    else { moveToPerspective(event.target, "1.0s"); }
+    
 });
 
+function resetPerspective(dt) {
 
+    // Set the current card to null
+    currentCard = null;
 
+    // For all cards in the dictionary, move them to their default position
+    for (var key in cards) {
+
+        // Move the card to its default position
+        cards[key].returnToDefaultPosition(dt);
+        
+        // If the card is clickable, set its brightness to 50%
+        var isClickable = cards[key].HTML.getAttribute("clickable") == "true";
+        cards[key].HTML.style.filter = isClickable ? "brightness(50%)" : "brightness(100%)";
+        cards[key].HTML.style.cursor = isClickable ? "pointer" : "default";
+    }
+}
+
+function moveToPerspective(target, dt) {
+
+    var card = cards[target.id];
+    var dx = `${card.defaultX} * (-1) * ${slideFactor}`;
+    var dy = `${card.defaultY} * (-1) * ${slideFactor}`;
+
+    // For all cards in the dictionary, move them to the perspective
+    for (var key in cards) {
+        cards[key].returnToDefaultPosition(dt);
+        cards[key].move(dx, dy, dt);
+        cards[key].HTML.style.filter = "brightness(50%)"
+        cards[key].HTML.style.cursor = "pointer";
+    }
+
+    // Set the target card to full brightness
+    card.HTML.style.filter = "brightness(100%)";
+    card.HTML.style.cursor = "default";
+
+    // Set the current card to the target card
+    currentCard = card;
+}
 
 
 
@@ -174,12 +165,12 @@ async function pageInitialization() {
     console.info("Loading cards into JavaScript...");
 
     // Create a card object for each card on the page
-    const html_cards = document.getElementsByClassName("card")
-    for (var element of html_cards) {
+    const htmlCards = document.getElementsByClassName("card")
+    for (var cardElement of htmlCards) {
 
         // Create a new card object and add to cards dictionary
-        var card_obj = new Card(element);
-        cards[element.id] = card_obj;
+        var cardObj = new Card(cardElement);
+        cards[cardElement.id] = cardObj;
     }
 
     // Print success message
@@ -210,7 +201,6 @@ async function desktopIntroAnimation() {
 
     // Drop left card on the table
     LEFT_CARD.move("0px", "-25px", "1.0s");
-    SHADOW.move("0px", "0px", "1.0s");
     await sleep(750);
 
     // Collide left card with right card
@@ -233,24 +223,23 @@ async function pageFinalization() {
     const rightCardShift = `${cards["card-cl"].width}/2`
 
     // Move cards to final position
-    cards["card-cl"].move(leftCardShift, "0px", "0.75s", transition = true, absolute=true);
-    cards["card-cr"].move(rightCardShift, "0px", "0.75s", transition = true, absolute=true);
-    cards["shadow"].move(leftCardShift, "0px", "0.75s", transition = true, absolute=true);
+    cards["card-cl"].move(leftCardShift, "0px", "0.75s", absolute=true);
+    cards["card-cr"].move(rightCardShift, "0px", "0.75s", absolute=true);
+    cards["shadow"].move(leftCardShift, "0px", "0.75s", absolute=true);
 
     // Set the default position of the cards to the final position
-    cards["card-cl"].HTML.setAttribute("dx", calc(leftCardShift));
-    cards["card-cr"].HTML.setAttribute("dx", calc(rightCardShift));
-
+    cards["card-cl"].defaultX = calc(leftCardShift);
+    cards["card-cr"].defaultX = calc(rightCardShift);
+    
     // Slightly delay corner collapse
-    await sleep(200);
+    await sleep(300);
 
     // Remove the curvature from the cards where they meet
-    cards["card-cl"].HTML.style.borderRadius = "20px 0px 0px 20px";
-    cards["card-cr"].HTML.style.borderRadius = "0px 20px 20px 0px";
+    cards["card-cl"].borderRadius = "20px 0px 0px 20px";
+    cards["card-cr"].borderRadius = "0px 20px 20px 0px";
 
-    // Remove the shadow card
-    cards["shadow"].HTML.remove();
-    delete cards["shadow"];
+    // Delete the shadow card
+    cards["shadow"].delete();
 
     // Wait for the animation to finish
     await sleep(750);

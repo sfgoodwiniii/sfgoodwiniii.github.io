@@ -4,26 +4,24 @@
     top: 50%;
 }
 
-#card-cl {
-    background-color: tan;
-}
+#card-cl {}
 
 #card-cr {
     background-color: rgb(173, 153, 125);
 }
 
-#card-ul {
-    background-color: tan;
-}
+#card-ul {}
 
-#card-ur {
-    background-color: tan;
-}
+#card-ur {}
 
-#card-bl {
-    background-color: tan;
-}
+#card-bl {}
 
-#card-br {
-    background-color: tan;
-}
+#card-br {}
+
+#card-ul2 {}
+
+#card-ur2 {}
+
+#card-bl2 {}
+
+#card-br2 {}
