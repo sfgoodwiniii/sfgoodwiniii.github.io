@@ -65,7 +65,6 @@ class Card {
         console.debug("Successfully created card: " + element.id);
     }
 
-
     // Reset the card to its default position
     returnToDefaultPosition(dt) { this.move(this.defaultX, this.defaultY, dt, true); }
 
@@ -254,7 +253,7 @@ async function pageFinalization() {
 // Initialize the page depending on platform
 var introFinished = false;
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    !isMobile ? _initialize_mobile() : _initialize_desktop();
+    isMobile ? _initialize_mobile() : _initialize_desktop();
 
 // Mobile
 async function _initialize_mobile() {
