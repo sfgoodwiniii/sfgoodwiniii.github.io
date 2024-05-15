@@ -1,0 +1,46 @@
+/* Card Object Styles */
+.card {
+    position: absolute;
+    border-radius: 20px;
+    background-color: tan;
+}
+
+.card > img {
+    position: relative;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    top: 40px;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.card > h1 {
+    position: relative;
+    top: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #000;
+    pointer-events: none;
+}
+
+.card > hr {
+    position: relative;
+    top: 40px;
+    width: 50%;
+    border: 1px solid #000;
+    pointer-events: none;
+}
+
+.card > p {
+    position: relative;
+    top: 35px;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: 400;
+    color: #000;
+    letter-spacing: .2rem;
+    pointer-events: none;
+}
