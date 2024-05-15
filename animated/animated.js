@@ -1,4 +1,6 @@
-import { MoveableHTMLElement, Origin } from "./HTMLAnimated.ts";
+// @ts-ignore
+
+import { MoveableHTMLElement, Origin, calc } from "./HTMLAnimated.ts";
 
 
 
@@ -14,7 +16,8 @@ function dT(dt) { return `all ${dt} cubic-bezier( 0.62, 0.17, 0.31, 0.87 )` }
 
 
 // Universal functions
-function sleep(milliseconds) { return new Promise(resolve => setTimeout(resolve, milliseconds)); }
+function sleep(milliseconds) { // @ts-ignore
+    return new Promise(resolve => setTimeout(resolve, milliseconds)); }
 
 
 // Global variables
@@ -30,22 +33,23 @@ var slideFactor = 0.65;
 // Perspective animations
 var currentCard = null;
 var isAnimating = false;
-// document.addEventListener('click', function(event) {
+document.addEventListener('click', function(event) {
 
-//     // If the intro animation is not finished, return
-//     if (!introFinished) { return; }
+    // If the intro animation is not finished, return
+    if (!introFinished) { return; }
 
-//     // If the animation is already running, return
-//     if(isAnimating) { return; }
-//     isAnimating = true;
-//     setTimeout(() => isAnimating = false, 750);
+    // If the animation is already running, return
+    if(isAnimating) { return; }
+    isAnimating = true;
+    setTimeout(() => isAnimating = false, 750);
 
-//     // Shift perspectives
-//     var isClickable = event.target.getAttribute("clickable") == "true";
-//     if (!isClickable) { resetPerspective("1.0s"); }
-//     else { moveToPerspective(event.target, "1.0s"); }
+    // Shift perspectives
+    // @ts-ignore
+    var isClickable = event.target.getAttribute("clickable") === "true";
+    if (!isClickable) { resetPerspective("1.0s"); }
+    else { moveToPerspective(event.target, "1.0s"); }
     
-// });
+});
 
 function resetPerspective(dt) {
 
@@ -92,6 +96,7 @@ function moveToPerspective(target, dt) {
 
 
 // Create a function that does the initial page load
+// @ts-ignore
 async function pageInitialization() {
 
     // Page loading console message
@@ -99,6 +104,7 @@ async function pageInitialization() {
 
     // Create a card object for each card on the page
     const htmlCards = document.getElementsByClassName("card")
+    // @ts-ignore
     for (var cardElement of htmlCards) {
 
         // Create a new card object and add to cards dictionary
@@ -113,6 +119,7 @@ async function pageInitialization() {
 
 
 // Desktop initialization animation
+// @ts-ignore
 async function desktopIntroAnimation() {
 
     // Logging
@@ -147,44 +154,45 @@ async function desktopIntroAnimation() {
     console.info("Intro animation complete!")
 }
 
-// // Animation final state
-// async function pageFinalization() {
+// Animation final state
+// @ts-ignore
+async function pageFinalization() {
 
-//     // Logging
-//     console.info("Finalizing page...")
+    // Logging
+    console.info("Finalizing page...")
 
-//     // Set card variables
-//     const leftCardShift = `-${cards["card-cr"].width}/2`
-//     const rightCardShift = `${cards["card-cl"].width}/2`
+    // Set card variables
+    const leftCardShift = `-${cards["card-cr"].width}/2`
+    const rightCardShift = `${cards["card-cl"].width}/2`
 
-//     // Move cards to final position
-//     cards["card-cl"].move(leftCardShift, "0px", "0.75s", absolute=true);
-//     cards["card-cr"].move(rightCardShift, "0px", "0.75s", absolute=true);
-//     cards["shadow"].move(leftCardShift, "0px", "0.75s", absolute=true);
+    // Move cards to final position
+    cards["card-cl"].move(leftCardShift, "0px", "0.75s", Origin.Absolute);
+    cards["card-cr"].move(rightCardShift, "0px", "0.75s", Origin.Absolute);
+    cards["shadow"].move(leftCardShift, "0px", "0.75s", Origin.Absolute);
 
-//     // Set the default position of the cards to the final position
-//     cards["card-cl"].defaultX = calc(leftCardShift);
-//     cards["card-cr"].defaultX = calc(rightCardShift);
+    // Set the default position of the cards to the final position
+    cards["card-cl"].defaultX = calc(leftCardShift);
+    cards["card-cr"].defaultX = calc(rightCardShift);
     
-//     // Slightly delay corner collapse
-//     await sleep(300);
+    // Slightly delay corner collapse
+    await sleep(300);
 
-//     // Remove the curvature from the cards where they meet
-//     cards["card-cl"].borderRadius = "20px 0px 0px 20px";
-//     cards["card-cr"].borderRadius = "0px 20px 20px 0px";
+    // Remove the curvature from the cards where they meet
+    cards["card-cl"].borderRadius = "20px 0px 0px 20px";
+    cards["card-cr"].borderRadius = "0px 20px 20px 0px";
 
-//     // Delete the shadow card
-//     cards["shadow"].delete();
+    // Delete the shadow card
+    cards["shadow"].delete();
 
-//     // Wait for the animation to finish
-//     await sleep(750);
+    // Wait for the animation to finish
+    await sleep(750);
 
-//     // Flag the animation done
-//     introFinished = true;
+    // Flag the animation done
+    introFinished = true;
 
-//     // Logging
-//     console.info("Page finalized!")
-// }
+    // Logging
+    console.info("Page finalized!")
+}
 
 // Initialize the page depending on platform
 var introFinished = false;
@@ -192,18 +200,20 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     isMobile ? _initialize_mobile() : _initialize_desktop();
 
 // Mobile
+// @ts-ignore
 async function _initialize_mobile() {
     await pageInitialization()
     await sleep(1000);
     console.info("Mobile detected, skipping intro animation...")
-    //await pageFinalization();
+    await pageFinalization();
 }
 
 // Desktop
+// @ts-ignore
 async function _initialize_desktop() {
     await pageInitialization();
     await sleep(1000);
     console.info("Desktop detected, running intro animation...")
     await desktopIntroAnimation();
-    //await pageFinalization();
+    await pageFinalization();
 }

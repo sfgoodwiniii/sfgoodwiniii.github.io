@@ -2,10 +2,8 @@
 // The constructor takes in an HTML element as a parameter
 
 
-
-function calc(value: string) { return `calc(${value})`; }
+export function calc(value: string) { return `calc(${value})`; }
 function sCalc(value: string) { return value.substring(5, value.length - 1); } // Strip calc function
-
 
 export enum Origin {
     Absolute,
@@ -15,6 +13,8 @@ export enum Origin {
     Default
 }
 
+
+// The MoveableHTMLElement class extends the HTMLElement class
 export class MoveableHTMLElement extends HTMLElement {
     
     // The constructor takes in an HTML element as a parameter
