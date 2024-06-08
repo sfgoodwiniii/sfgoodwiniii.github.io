@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
+
+/*:root[data-theme="light"] {*/
+/*    --text: #08004d;*/
+/*    --background: #bebeda;*/
+/*    --primary: #030038;*/
+/*    --secondary: #474592;*/
+/*    --tertiary: #2622a5;*/
+/*    --disabled: #2622a5;*/
+/*    --enabled: #2622a5;*/
+/*    --warning: #ff5e5e;*/
+/*    --success: #5eff5e;*/
+/*}*/
+/*:root[data-theme="dark"] {*/
+/*    --text: #bab3ff;*/
+/*    --background: #252541;*/
+/*    --primary: #cac7ff;*/
+/*    --secondary: #706dba;*/
+/*    --tertiary: #5e5add;*/
+/*    --disabled: #5e5add;*/
+/*    --enabled: #5e5add;*/
+/*    --warning: #ff5e5e;*/
+/*    --success: #5eff5e;*/
+/*}*/
+
+
+
+
+
+:root {
+    /* Global Blocks */
+    --main-height: 75px;
+    --main-padding: 5px;
+    --main-border: 2px;
+
+    /* Colors */
+    --text: #bab3ff;
+    --background: #252541;
+    --primary: #cac7ff;
+    --secondary: #706dba;
+    --tertiary: #5e5add;
+    --disabled: #5e5add;
+    --enabled: #5e5add;
+    --warning: #ff5e5e;
+    --success: #5eff5e;
+}
+
+
+.head-box {
+    /* Position */
+    position: fixed;
+    top: 0; left: 0;
+    width: calc(100% - var(--main-border) * 2 - var(--main-padding) * 2);
+    height: var(--main-height);
+
+    /* Style */
+    border: var(--main-border) solid var(--secondary);
+    padding: var(--main-padding);
+    background-color: var(--background);
+}
+
+.body-box {
+    /* Position */
+    position: fixed;
+    top: calc(var(--main-height) + var(--main-border) * 2 + var(--main-padding) * 2); left: 0;
+    width: calc(100% - var(--main-border) * 2 - var(--main-padding) * 2);
+    height: calc(100% - var(--main-height) - var(--main-border) * 4 - var(--main-padding) * 4);
+
+    /* Style */
+    border: var(--main-border) solid var(--secondary);
+    padding: var(--main-padding);
+    background-color: var(--background);
+}
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Inter', serif;
+    font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
