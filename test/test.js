@@ -1,61 +1,96 @@
-function toggleDarkMode() {
-	const darkMode = document.body.classList.toggle('dark-mode');
-	localStorage.setItem('dark-mode', darkMode);
-	// const darkMode = localStorage.getItem('dark-mode') === 'true';
-	// if (darkMode) {
-	// 	document.body.classList.add('dark-mode');
-	// }
+// Page Initialization
+function initializePage() {
+	manageSideBar(initSideBar());
+	manageDarkMode(initDarkMode());
 }
 
-function initialize() {
+// Directory (Sidebar) Manager
+function initSideBar() {
+	if (localStorage.getItem('show-sidebar') === null) {
+		localStorage.setItem('show-sidebar', "true");
+	}
+	return localStorage.getItem('show-sidebar') === 'true';
+}
+function toggleSideBar() {
+	let showSidebar = localStorage.getItem('show-sidebar') === 'true';
+	showSidebar = !showSidebar;
+	manageSideBar(showSidebar);
+	localStorage.setItem('show-sidebar', showSidebar.toString());
+}
+function manageSideBar(showSidebar) {
+	if (showSidebar) { openSideBar(); }
+	else             { closeSideBar(); }
+}
+function openSideBar() {
+
+	// Find elements
 	const sidebar = document.getElementById('sidebar');
 	const content = document.getElementById('content');
-	const displacement = "calc(-1 * var(--directory-width) - var(--universal-margin))";
-	sidebar.style.transform = "translateX(" + displacement + ")";
-	content.style.transform = "translateX(" + displacement + ")";
-	// make content wider to fill the gap
-
-
-}
-
-
-
-
-
-
-
-
-
-
-let showSidebar = false;
-function toggleSideBar() {
-	showSidebar = !showSidebar;
-	displaySidebar(showSidebar);
-	console.log(showSidebar);
-}
-function displaySidebar(showSidebar) {
-	const sidebar = document.getElementById('sidebar');
 	const directory = document.getElementById('directory');
 
-	if (showSidebar) {  // When the sidebar goes from hidden to shown
+	// Change styles
+	sidebar.style.transform = "translateX(0)";
+	content.style.width = ""
+	directory.style.width = "var(--directory-width)";
 
-		// Sidebar
-		sidebar.style.width = "var(--directory-width)";
-		sidebar.style.margin = "0 var(--universal-margin) 0 0";
-		sidebar.style.borderRadius = "var(--universal-radius)";
-		sidebar.style.padding = "calc(var(--universal-radius))";
-
-		// Directory
-		directory.style.width = "var(--directory-width)";
-	}
-	else {
-		// Sidebar
-		sidebar.style.width = "0";
-		sidebar.style.margin = "0";
-		sidebar.style.borderRadius = "0";
-		sidebar.style.padding = "0";
-
-		// Directory
-		directory.style.width = "var(--directory-height)";
-	}
+	// Print message
+	console.info("Sidebar opened");
 }
+function closeSideBar() {
+
+	// Find elements
+	const sidebar = document.getElementById('sidebar');
+	const content = document.getElementById('content');
+	const directory = document.getElementById('directory');
+
+	// Change styles
+	sidebar.style.transform = "";
+	content.style.width = "100%";
+	directory.style.width = ""
+
+	// Print message
+	console.log("Sidebar closed");
+}
+
+// Dark Mode
+function initDarkMode() {
+	if (localStorage.getItem('dark-mode') === null) {
+		localStorage.setItem('dark-mode', "false");
+	}
+	return localStorage.getItem('dark-mode') === 'true';
+}
+function toggleDarkMode() {
+	let darkMode = localStorage.getItem('dark-mode') === 'true';
+	darkMode = !darkMode;
+	manageDarkMode(darkMode);
+
+	// Save the new value
+	localStorage.setItem('dark-mode', darkMode.toString());
+}
+function manageDarkMode(darkMode) {
+	if (darkMode) { enableDarkMode(); }
+	else                { disableDarkMode(); }
+}
+function enableDarkMode() {
+	document.body.classList.add('dark-mode');
+	console.log("Dark mode enabled");
+}
+function disableDarkMode() {
+	document.body.classList.remove('dark-mode');
+	console.log("Dark mode disabled");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

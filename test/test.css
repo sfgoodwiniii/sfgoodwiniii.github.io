@@ -1,63 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
 
-/*:root[data-theme="light"] {*/
-/*    --text: #08004d;*/
-/*    --background: #bebeda;*/
-/*    --primary: #030038;*/
-/*    --secondary: #474592;*/
-/*    --tertiary: #2622a5;*/
-/*    --disabled: #2622a5;*/
-/*    --enabled: #2622a5;*/
-/*    --warning: #ff5e5e;*/
-/*    --success: #5eff5e;*/
-/*}*/
-/*:root[data-theme="dark"] {*/
-/*    --text: #bab3ff;*/
-/*    --background: #252541;*/
-/*    --primary: #cac7ff;*/
-/*    --secondary: #706dba;*/
-/*    --tertiary: #5e5add;*/
-/*    --disabled: #5e5add;*/
-/*    --enabled: #5e5add;*/
-/*    --warning: #ff5e5e;*/
-/*    --success: #5eff5e;*/
-/*}*/
-
-
-/*Light*/
-/*--text: #160d1c;*/
-/*--background: #f1e9f7;*/
-/*--primary: #542772;*/
-/*--secondary: #b075d7;*/
-/*--accent: #7e2db4;*/
 
 
 
-:root {
-    /* Colors */
-    --text: #ece3f2;
+@media (prefers-color-scheme: light) {
+    :root {
+        --text: #160d1c;
+        --background: #f1e9f7;
+        --primary: #542772;
+        --secondary: #b075d7;
+        --accent: #7e2db4;
+        --foreground: #48305e;
+        --embedded: #120b13;
+        --enabled: #bb8ed8;
+        --disabled: #120918;
+        --warning: #ff5e5e;
+        --success: #5eff5e;
+    }
+}
 
-    --foreground: #48305e;
-    --background: #2c1d33;
-    --embedded: #120b13;
-
-
-
-    --primary: #bb8ed8;
-    --secondary: #622888;
-    --accent: #9c4ad2;
-
-    --enabled: #bb8ed8;
-    --disabled: #120918;
-    --warning: #ff5e5e;
-    --success: #5eff5e;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ece3f2;
+        --foreground: #48305e;
+        --background: #2c1d33;
+        --embedded: #120b13;
+        --primary: #bb8ed8;
+        --secondary: #622888;
+        --accent: #9c4ad2;
+        --enabled: #bb8ed8;
+        --disabled: #120918;
+        --warning: #ff5e5e;
+        --success: #5eff5e;
+    }
 }
 
 
 
 
-
-/* For HTML Objects */
 :root {
     --universal-margin: 12px;
     --universal-radius: 8px;
@@ -66,6 +46,35 @@
     --directory-transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s;
     --hamburger-size: 24px;
 }
+
+
+
+/* Universal */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+body {
+    font-family: 'Inter', serif;
+    font-weight: 400;
+    color: var(--text);
+}
+
+/* Universal Box */
 .box {
     box-sizing: border-box;
     border-radius: var(--universal-radius);
@@ -73,14 +82,8 @@
 
 
 
-
 /* Page Body */
 body {
-    /* Font */
-    font-family: 'Inter', serif;
-    font-weight: 400;
-    color: var(--text);
-
     /* Object */
     background-color: var(--foreground);
     margin: var(--universal-margin); padding: 0;
@@ -99,7 +102,6 @@ body {
     gap: var(--universal-margin);
 }
 
-
 /* Primary Segmentation */
 #top {
     /* Object */
@@ -117,12 +119,14 @@ body {
     /* Alignment */
     display: flex;
     flex-shrink: 0;
+    justify-content: right;
+    gap: var(--universal-margin);
 }
-
 
 /* Secondary Segmentation (Directory) */
 #directory {
     /* Object */
+    width: var(--directory-height);
     height: calc(var(--directory-height));
     background-color: var(--embedded);
     border-radius: var(--universal-radius);
@@ -145,13 +149,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 #hamburger > img {
     /* Object */
     width: var(--hamburger-size);
     height: var(--hamburger-size);
 }
-
 
 /* Secondary Segmentation (Topbar) */
 #topbar {
@@ -162,31 +166,38 @@ body {
     padding: calc(var(--universal-radius));
 }
 
+/* Secondary Segmentation (Content) */
+#content {
+    /* Object */
+    width: calc(100% - var(--directory-width) - var(--universal-margin));
+    background-color: var(--embedded);
+    border-radius: var(--universal-radius);
+    padding: calc(var(--universal-radius));
+    transition: var(--directory-transition);
+}
 
-/* Secondary Segmentation (Sidebar) */
+
+
+/* Sidebar Widget */
 #sidebar {
     /* Object */
     width: var(--directory-width);
+    height: calc(100% - var(--directory-height) - 3 * var(--universal-margin));
     background-color: var(--embedded);
-    transition: var(--directory-transition);
     border-radius: var(--universal-radius);
     padding: calc(var(--universal-radius));
-    margin: 0 var(--universal-margin) 0 0;
+    transition: var(--directory-transition);
+    transform: translateX(calc(-1 * var(--directory-width) - var(--universal-margin)));
 
     /* Alignment */
+    position: absolute;
+    top: calc(var(--directory-height) + 2 * var(--universal-margin));
+    left: var(--universal-margin);
     flex-shrink: 0;
 }
 
 
 
-/* Secondary Segmentation (Content) */
-#content {
-    /* Object */
-    width: 100%;
-    background-color: var(--embedded);
-    border-radius: var(--universal-radius);
-    padding: calc(var(--universal-radius));
-}
 
 
 
@@ -195,24 +206,6 @@ body {
 
 
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Inter', serif;
-    font-weight: 700;
-}
-
-html {font-size: 100%;} /* 16px */
-
-h1 {font-size: 4.210rem; /* 67.36px */}
-
-h2 {font-size: 3.158rem; /* 50.56px */}
-
-h3 {font-size: 2.369rem; /* 37.92px */}
-
-h4 {font-size: 1.777rem; /* 28.48px */}
-
-h5 {font-size: 1.333rem; /* 21.28px */}
-
-small {font-size: 0.750rem; /* 12px */}
 
 
 
