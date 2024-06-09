@@ -24,69 +24,176 @@
 /*}*/
 
 
+/*Light*/
+/*--text: #160d1c;*/
+/*--background: #f1e9f7;*/
+/*--primary: #542772;*/
+/*--secondary: #b075d7;*/
+/*--accent: #7e2db4;*/
 
 
 
 :root {
-    /* Global Blocks */
-    --main-height: 75px;
-    --main-padding: 5px;
-    --main-border: 2px;
-
     /* Colors */
-    --text: #bab3ff;
-    --background: #252541;
-    --primary: #cac7ff;
-    --secondary: #706dba;
-    --tertiary: #5e5add;
-    --disabled: #5e5add;
-    --enabled: #5e5add;
+    --text: #ece3f2;
+
+    --foreground: #48305e;
+    --background: #2c1d33;
+    --embedded: #120b13;
+
+
+
+    --primary: #bb8ed8;
+    --secondary: #622888;
+    --accent: #9c4ad2;
+
+    --enabled: #bb8ed8;
+    --disabled: #120918;
     --warning: #ff5e5e;
     --success: #5eff5e;
 }
 
 
-.head-box {
-    /* Position */
-    position: fixed;
-    top: 0; left: 0;
-    width: calc(100% - var(--main-border) * 2 - var(--main-padding) * 2);
-    height: var(--main-height);
 
-    /* Style */
-    border: var(--main-border) solid var(--secondary);
-    padding: var(--main-padding);
-    background-color: var(--background);
+
+
+/* For HTML Objects */
+:root {
+    --universal-margin: 12px;
+    --universal-radius: 8px;
+    --directory-width: 192px;
+    --directory-height: 32px;
+    --directory-transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s;
+    --hamburger-size: 24px;
 }
-
-.body-box {
-    /* Position */
-    position: fixed;
-    top: calc(var(--main-height) + var(--main-border) * 2 + var(--main-padding) * 2); left: 0;
-    width: calc(100% - var(--main-border) * 2 - var(--main-padding) * 2);
-    height: calc(100% - var(--main-height) - var(--main-border) * 4 - var(--main-padding) * 4);
-
-    /* Style */
-    border: var(--main-border) solid var(--secondary);
-    padding: var(--main-padding);
-    background-color: var(--background);
+.box {
+    box-sizing: border-box;
+    border-radius: var(--universal-radius);
 }
 
 
 
 
-
-
-
-
-
-
+/* Page Body */
 body {
+    /* Font */
     font-family: 'Inter', serif;
     font-weight: 400;
     color: var(--text);
-    background-color: var(--background);
+
+    /* Object */
+    background-color: var(--foreground);
+    margin: var(--universal-margin); padding: 0;
+
+    /* Alignment */
+    flex-shrink: 0;
 }
+#main {
+    /* Object */
+    height: calc(100vh - var(--universal-margin) * 2);
+
+    /* Alignment */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: var(--universal-margin);
+}
+
+
+/* Primary Segmentation */
+#top {
+    /* Object */
+    height: var(--directory-height);
+
+    /* Alignment */
+    display: flex;
+    flex-shrink: 0;
+    gap: var(--universal-margin);
+}
+#bottom {
+    /* Object */
+    height: calc(100% - var(--directory-height) - var(--universal-margin));
+
+    /* Alignment */
+    display: flex;
+    flex-shrink: 0;
+}
+
+
+/* Secondary Segmentation (Directory) */
+#directory {
+    /* Object */
+    height: calc(var(--directory-height));
+    background-color: var(--embedded);
+    border-radius: var(--universal-radius);
+    transition: var(--directory-transition);
+
+    /* Alignment */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+#hamburger {
+    /* Object */
+    width: calc(var(--directory-height));
+    height: calc(var(--directory-height));
+    background-color: var(--background);
+    border-radius: var(--universal-radius);
+
+    /* Alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hamburger > img {
+    /* Object */
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+}
+
+
+/* Secondary Segmentation (Topbar) */
+#topbar {
+    /* Object */
+    width: 100%;
+    background-color: var(--background);
+    border-radius: var(--universal-radius);
+    padding: calc(var(--universal-radius));
+}
+
+
+/* Secondary Segmentation (Sidebar) */
+#sidebar {
+    /* Object */
+    width: var(--directory-width);
+    background-color: var(--embedded);
+    transition: var(--directory-transition);
+    border-radius: var(--universal-radius);
+    padding: calc(var(--universal-radius));
+    margin: 0 var(--universal-margin) 0 0;
+
+    /* Alignment */
+    flex-shrink: 0;
+}
+
+
+
+/* Secondary Segmentation (Content) */
+#content {
+    /* Object */
+    width: 100%;
+    background-color: var(--embedded);
+    border-radius: var(--universal-radius);
+    padding: calc(var(--universal-radius));
+}
+
+
+
+
+
+
+
 
 h1, h2, h3, h4, h5 {
     font-family: 'Inter', serif;
@@ -106,3 +213,11 @@ h4 {font-size: 1.777rem; /* 28.48px */}
 h5 {font-size: 1.333rem; /* 21.28px */}
 
 small {font-size: 0.750rem; /* 12px */}
+
+
+
+
+
+
+
+
