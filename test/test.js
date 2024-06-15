@@ -34,7 +34,7 @@ function openSideBar() {
 	directory.style.width = "var(--directory-width)";
 
 	// Print message
-	console.info("Sidebar opened");
+	console.debug("Sidebar opened");
 }
 function closeSideBar() {
 
@@ -49,7 +49,7 @@ function closeSideBar() {
 	directory.style.width = ""
 
 	// Print message
-	console.log("Sidebar closed");
+	console.debug("Sidebar closed");
 }
 
 // Dark Mode
@@ -73,24 +73,9 @@ function manageDarkMode(darkMode) {
 }
 function enableDarkMode() {
 	document.body.classList.add('dark-mode');
-	console.log("Dark mode enabled");
+	console.debug("Dark mode enabled");
 }
 function disableDarkMode() {
 	document.body.classList.remove('dark-mode');
-	console.log("Dark mode disabled");
+	console.debug("Dark mode disabled");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
