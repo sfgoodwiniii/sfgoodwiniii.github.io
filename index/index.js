@@ -1,1 +1,0 @@
-window.location.replace("https://linktr.ee/stanieldev")
