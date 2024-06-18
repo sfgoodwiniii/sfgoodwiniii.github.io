@@ -69,7 +69,7 @@ function toggleDarkMode() {
 }
 function manageDarkMode(darkMode) {
 	if (darkMode) { enableDarkMode(); }
-	else                { disableDarkMode(); }
+	else          { disableDarkMode(); }
 }
 function enableDarkMode() {
 	document.body.classList.add('dark-mode');
