@@ -7,7 +7,7 @@ function initializePage() {
 // Directory (Sidebar) Manager
 function initSideBar() {
 	if (localStorage.getItem('show-sidebar') === null) {
-		localStorage.setItem('show-sidebar', "true");
+		localStorage.setItem('show-sidebar', "false");
 	}
 	return localStorage.getItem('show-sidebar') === 'true';
 }
