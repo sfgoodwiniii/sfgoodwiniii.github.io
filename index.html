@@ -42,40 +42,51 @@
 
     <!-- Page Style(s) -->
     <link rel="stylesheet" href="index/index.css">
-    <link rel="stylesheet" href="index/cards.css">
 
     <!-- Page Script(s) -->
-    <script src="index/index.js" defer></script>
+    <script src="index/index.js"></script>
 </head>
 
 
 <body>
-<div id="directory">
-    <div id="branding">
-        <a href="https://staniel.dev"><img src="favicon.ico" class="icon" alt="Stanley's Website"></a>
-        Stanley Goodwin
+<div class="header">
+    <div class="left">
+        <img id="logo" src="favicon.ico" alt="PFP" onclick="easterEgg()">
+        <div>Stanley Goodwin</div>
     </div>
-    <div id="hyperlinks">
-        <a href="index.html">Profession</a>
-        <a href="index.html">Hobbies</a>
-        <a href="index.html">Portfolio</a>
-        <a href="index.html">Contact</a>
+    <div class="middle">
+        <a id="home"         href="https://staniel.dev" class="selected"></a>
+        <a id="professional" href="https://staniel.dev/professional"></a>
+        <a id="personal"     href="https://staniel.dev/personal"></a>
+        <a id="portfolio"    href="https://staniel.dev/portfolio"></a>
+        <a id="contact"      href="https://staniel.dev/contact"></a>
     </div>
-
-    <div id="contact">
-        <a href="https://www.linkedin.com/in/stanieldev/">
-            <img src="index/assets/linkedin.svg" class="social-icon" alt="My LinkedIn Profile">
-        </a>
-        <a href="https://github.com/stanieldev">
-            <img src="index/assets/github.svg" class="social-icon" alt="My GitHub Profile">
-        </a>
+    <div class="right">
         <a href="https://www.youtube.com/@stanieldev">
-            <img src="index/assets/youtube.svg" class="social-icon" alt="My YouTube Channel">
-        </a>
-
+            <img src="index/assets/youtube.webp" alt="YouTube" id="youtube"></a>
+        <a href="https://www.linkedin.com/in/stanieldev/">
+            <img src="index/assets/linkedin.png" alt="LinkedIn" id="linkedin"></a>
+        <a href="https://github.com/stanieldev">
+            <img src="index/assets/github.png" alt="GitHub" id="github"></a>
+        <div></div>
+        <div></div>
+        <a><img id="theme" src="" alt="" onclick="changeTheme()"></a>
+        <select id="language" onchange="changeLanguage()">
+            <option value="EN">EN</option>
+            <option value="FR">FR</option>
+            <option value="ES">ES</option>
+        </select>
     </div>
+    <script>loadHeader()</script>
 </div>
-<div id="webpage"></div>
+
+
+
+
+
+
+
+
 </body>
 
 
