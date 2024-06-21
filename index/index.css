@@ -1,0 +1,122 @@
+:root {
+    --text: #41214f;
+    --text-highlight: #78438a;
+
+    --titlebar: #fcf5ff;
+    --background: #a499af;
+}
+
+:root {
+    --top-padding: 10px;
+    --side-padding: 80px;
+    --hyperlink-spacing: 40px;
+    --header-height: 50px;
+    --title-box-width: 125px;
+}
+
+body {
+    height: calc(100vh - var(--top-padding));
+    width: 100%; margin: 0; padding: 0;
+}
+
+#directory {
+    background-color: var(--titlebar);
+
+    /* Size */
+    height: var(--header-height);
+    padding: var(--top-padding) var(--side-padding) var(--top-padding) var(--side-padding);
+
+    /* Flex */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#webpage {
+    /* Size */
+    height: calc(100% - var(--top-padding) - var(--header-height));
+
+    /* Flex */
+    flex-shrink: 1;
+}
+
+#branding {
+    /* Size */
+    height: 100%;
+    width: var(--title-box-width);
+
+    /* Flex */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-shrink: 0;
+}
+#branding > a {
+    /* Size */
+    height: 100%;
+    width: auto;
+    margin: 0 8px 0 0;
+
+    /* Flex */
+    flex-shrink: 0;
+}
+#branding > a:hover {
+    /* Color */
+    filter: invert(100%);
+}
+.icon {
+    /* Size */
+    height: 100%;
+    width: auto;
+
+    /* Flex */
+    flex-shrink: 0;
+}
+
+#hyperlinks {
+    /* Size */
+    height: 100%;
+    width: 100%;
+
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--hyperlink-spacing)
+}
+#hyperlinks > a {
+    color: var(--text);
+    text-decoration: none;
+}
+#hyperlinks > a:hover {
+    color: var(--text-highlight);
+}
+
+#contact {
+    /* Size */
+    height: 100%;
+    width: var(--title-box-width);
+
+    /* Flex */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+}
+#contact > a {
+    /* Size */
+    height: 60%;
+    width: auto;
+
+    /* Flex */
+    flex-shrink: 0;
+}
+.social-icon {
+    /* Size */
+    height: 100%;
+    width: auto;
+
+    /* Flex */
+    flex-shrink: 0;
+}
