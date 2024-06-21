@@ -1,9 +1,0 @@
-{
-    "editor.insertSpaces": false,
-    "files.exclude": {
-        ".vscode": true,
-        "CNAME": true,
-        "favicon.ico": true,
-        "LICENSE": true
-    }
-}
