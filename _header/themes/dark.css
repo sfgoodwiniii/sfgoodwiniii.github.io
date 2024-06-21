@@ -6,7 +6,6 @@
 }
 
 #youtube, #logo {
-    /*darken the logo a bit*/
     filter: brightness(75%);
 }
 

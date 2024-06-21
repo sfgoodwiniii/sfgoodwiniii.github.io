@@ -41,38 +41,35 @@
     <meta name="twitter:image" content="favicon.ico">
 
     <!-- Page Style(s) -->
-    <link rel="stylesheet" href="_header/header.css">
     <link rel="stylesheet" href="index/index.css">
 
     <!-- Page Script(s) -->
-    <script src="_header/header.js"></script>
-    <script src="_header/themes.js"></script>
-    <script src="_header/language.js"></script>
+    <script src="index/index.js"></script>
 </head>
 
 
 <body>
 <div class="header">
-    <div id="header-name">
+    <div class="left">
         <img id="logo" src="favicon.ico" alt="PFP" onclick="easterEgg()">
         <div>Stanley Goodwin</div>
     </div>
-    <div id="header-directory">
-        <a id="home" href="https://staniel.dev" class="header-selected"></a>
+    <div class="middle">
+        <a id="home"         href="https://staniel.dev" class="selected"></a>
         <a id="professional" href="https://staniel.dev/professional"></a>
-        <a id="personal" href="https://staniel.dev/personal"></a>
-        <a id="portfolio" href="https://staniel.dev/portfolio"></a>
-        <a id="contact" href="https://staniel.dev/contact"></a>
+        <a id="personal"     href="https://staniel.dev/personal"></a>
+        <a id="portfolio"    href="https://staniel.dev/portfolio"></a>
+        <a id="contact"      href="https://staniel.dev/contact"></a>
     </div>
-    <div id="header-socials">
+    <div class="right">
         <a href="https://www.youtube.com/@stanieldev">
             <img src="_header/assets/youtube.webp" alt="YouTube" id="youtube"></a>
         <a href="https://www.linkedin.com/in/stanieldev/">
             <img src="_header/assets/linkedin.png" alt="LinkedIn" id="linkedin"></a>
         <a href="https://github.com/stanieldev">
             <img src="_header/assets/github.png" alt="GitHub" id="github"></a>
-    </div>
-    <div id="header-settings">
+        <div></div>
+        <div></div>
         <a><img id="theme" src="" alt="" onclick="changeTheme()"></a>
         <select id="language" onchange="changeLanguage()">
             <option value="EN">EN</option>
@@ -82,6 +79,12 @@
     </div>
     <script>loadHeader()</script>
 </div>
+
+
+
+
+
+
 
 
 </body>
