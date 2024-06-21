@@ -49,40 +49,44 @@
 
 
 <body>
-<div id="main">
-
-    <!-- Top Bar -->
-    <div id="top">
-        <div id="directory" class="box">
-            <div id="hamburger" class="box">
-                <img src="index/assets/menu.svg" alt="Stanley's Website" onclick="toggleSideBar()">
-            </div>
-        </div>
-        <div id="topbar" class="box">Hyperlink Bar</div>
+<div class="header">
+    <div class="left">
+        <img id="logo" src="favicon.ico" alt="PFP" onclick="easterEgg()">
+        <div>Stanley Goodwin</div>
     </div>
-
-    <!-- Main Content Region -->
-    <div id="bottom">
-        <div id="content" class="box"></div>
+    <div class="middle">
+        <a id="home"         href="https://staniel.dev" class="selected"></a>
+        <a id="professional" href="https://staniel.dev/professional"></a>
+        <a id="personal"     href="https://staniel.dev/personal"></a>
+        <a id="portfolio"    href="https://staniel.dev/portfolio"></a>
+        <a id="contact"      href="https://staniel.dev/contact"></a>
     </div>
-
-    <!-- Menu Sidebar -->
-    <div id="sidebar" class="box">
-<!--        <div class="section">-->
-<!--            <img src="index/assets/menu.svg" alt="Home section"> Home-->
-<!--            <a class="tile" href=""></a>-->
-<!--        </div>-->
-
-
-        <h3>Home</h3>
-        Guitar
-        <footer> <p>&copy; Stanley Goodwin (2024)</p> </footer>
+    <div class="right">
+        <a href="https://www.youtube.com/@stanieldev">
+            <img src="index/assets/youtube.webp" alt="YouTube" id="youtube"></a>
+        <a href="https://www.linkedin.com/in/stanieldev/">
+            <img src="index/assets/linkedin.png" alt="LinkedIn" id="linkedin"></a>
+        <a href="https://github.com/stanieldev">
+            <img src="index/assets/github.png" alt="GitHub" id="github"></a>
+        <div></div>
+        <div></div>
+        <a><img id="theme" src="" alt="" onclick="changeTheme()"></a>
+        <select id="language" onchange="changeLanguage()">
+            <option value="EN">EN</option>
+            <option value="FR">FR</option>
+            <option value="ES">ES</option>
+        </select>
     </div>
-
-    <!-- Page Initialization -->
-    <script>initializePage()</script>
-
+    <script>loadHeader()</script>
 </div>
+
+
+
+
+
+
+
+
 </body>
 
 
