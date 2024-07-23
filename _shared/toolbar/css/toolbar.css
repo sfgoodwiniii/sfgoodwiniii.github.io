@@ -1,0 +1,100 @@
+:root {
+    /* Variables */
+    --page-padding: 35px;
+    --header-padding: 15px var(--page-padding);
+    --header-height: 50px;
+    --transition: 0.25s;
+}
+
+
+/* Overriding Classes */
+.text-highlight {
+    color: var(--text-highlight) !important;
+    cursor: default !important;
+    transition: var(--transition) !important;
+}
+
+
+/* Webpage Classes */
+
+.toolbar {
+    /* Characteristics */
+    height: var(--header-height);
+    padding: var(--header-padding);
+    margin: 0;
+
+    /* Flex Box */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* Transition */
+    transition: var(--transition);
+}
+
+#directory {
+    gap: var(--page-padding);
+}
+#logo {
+    /* Characteristics */
+    height: 100%;
+    width: auto;
+}
+#directory-list {
+    gap: 10px;
+}
+
+.nav {
+    /* Text Properties */
+    color: var(--text);
+    text-decoration: none;
+
+    /* Transition */
+    transition: var(--transition);
+}
+.nav:hover {
+    /* Change Cursor */
+    cursor: pointer;
+}
+
+
+
+
+
+#settings {
+    gap: var(--page-padding);
+}
+#language-selector {
+    gap: 4px;
+    padding: 0 8px;
+}
+#darkmode-toggle {
+
+}
+#theme {
+    /* Characteristics */
+    height: calc(var(--header-height) * 0.75);
+    width: auto;
+}
+.lang {
+    transition: var(--transition);
+}
+.lang:hover {
+    cursor: pointer;
+}
+
+
+
+
+.row-list {
+    /* Characteristics */
+    height: 100%;
+
+    /* Flex Box */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
