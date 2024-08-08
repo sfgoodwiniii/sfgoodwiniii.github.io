@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en_US">
+
+
+<head>
+    <!-- Default Title -->
+    <title>Stanley's Website</title>
+    <meta name="author" content="Stanley Goodwin (2024)">
+    <meta name="keywords" content="Stanley, Staniel, Stanley's Website, Staniel's Website">
+
+    <!-- Default Link Tags -->
+    <link rel="canonical" href="https://stanieldev.github.io/">
+    <link rel="icon" href="/.resources/icons/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/.resources/icons/favicon.ico">
+
+    <!-- Default Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Stanley's Website">
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Stanley's Website">
+    <meta property="og:site_name" content="Stanley's Website">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stanieldev.github.io/">
+    <meta property="og:image" content="header.ico">
+    <meta property="og:description" content="Stanley's Personal Website">
+
+    <!-- Open Graph Protocol (Optional) -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:locale:alternate" content="en_CA">
+    <meta property="og:locale:alternate" content="en_AU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="My personal website!">
+    <meta name="twitter:site" content="@stanieldev">
+    <meta name="twitter:creator" content="@stanieldev">
+    <meta name="twitter:title" content="Stanley's Website">
+    <meta name="twitter:description" content="Stanley's Website">
+    <meta name="twitter:image" content="header.ico">
+
+    <!-- Page Style(s) -->
+    <link rel="stylesheet" href="/.templates/header/header.css">
+    <link rel="stylesheet" href="/.resources/styles/theme_dark.css">
+
+    <!-- Page Script(s) -->
+    <script src="/.templates/header/header.js" defer></script>
+    <script src="/.templates/header/switch_theme.js" defer></script>
+    <script src="/.templates/header/switch_language.js" defer></script>
+</head>
+
+
+<body>
+<div class="toolbar">
+
+    <!-- Navigation -->
+    <div id="directory" class="row-list">
+        <img id="logo" src=".resources/icons/favicon.ico" alt="Logo" onclick="header()">
+        <div id="directory-list" class="row-list">
+            <a class="nav" id="home" href="https://staniel.dev">Home</a>|
+            <a class="nav" id="about" href="https://staniel.dev/about">About</a>|
+            <a class="nav" id="portfolio" href="https://staniel.dev/portfolio">Portfolio</a>|
+            <a class="nav" id="contact" href="https://staniel.dev/contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Settings -->
+    <div id="settings" class="row-list">
+        <div id="language-selector" class="row-list">
+            <a class="lang" id="EN" onclick="selectLang('EN')">EN</a>|
+            <a class="lang" id="FR" onclick="selectLang('FR')">FR</a>
+        </div>
+        <div id="darkmode-toggle">
+            <img id="theme" src=".resources/images/sun.png" alt="Sun" onclick="changeTheme()">
+        </div>
+    </div>
+
+</div>
+</body>
+
+
+</html>

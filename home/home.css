@@ -1,0 +1,49 @@
+/* Default Types */
+body {
+    /* Characteristics */
+    margin: 0;
+    padding: 0;
+
+    /* Text Properties */
+    font-family: Roboto, sans-serif;
+    color: var(--text);
+
+    /* Color */
+    background-color: var(--background);
+
+    /* Transition */
+    transition: var(--transition);
+}
+
+
+
+
+/* Webpage Classes */
+
+.tab:hover {
+    cursor: pointer;
+}
+
+
+#title {
+    /* Characteristics */
+    padding: 75px var(--page-padding) 25px var(--page-padding);
+    margin: 0;
+
+    /* Text Properties */
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--text-highlight);
+}
+
+#tab-bar {
+    /* Characteristics */
+    height: 50px;
+    padding: 0 var(--page-padding);
+    margin: 0;
+
+    /* Flex Box */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}

@@ -1,0 +1,9 @@
+:root {
+    --text: #4f3e67;
+    --text-highlight: #11001c;
+    --background: #c9c2d8;
+}
+
+.text-highlight {
+    text-decoration: underline;
+}
