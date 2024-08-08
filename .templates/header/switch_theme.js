@@ -23,13 +23,13 @@ function changeTheme() {
 }
 function loadDarkMode() {
 	console.info("Set Theme: Dark mode");
-	document.getElementById("theme").src = "_shared/toolbar/img/moon.png";
+	document.getElementById("theme").src = ".resources/images/moon.png";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
 	console.info("Set Theme: Light mode");
-	document.getElementById("theme").src = "_shared/toolbar/img/sun.png";
+	document.getElementById("theme").src = ".resources/images/sun.png";
 	delDarkMode();
 	setLightMode();
 }
@@ -38,7 +38,7 @@ function setDarkMode() {
 	const link = document.createElement("link");
 	link.rel = "stylesheet";
 	link.type = "text/css";
-	link.href = "_shared/theme_dark.css";
+	link.href = ".resources/styles/theme_dark.css";
 	head.appendChild(link);
 }
 function delDarkMode() {
@@ -55,7 +55,7 @@ function setLightMode() {
 	const link = document.createElement("link");
 	link.rel = "stylesheet";
 	link.type = "text/css";
-	link.href = "_shared/theme_light.css";
+	link.href = ".resources/styles/theme_light.css";
 	head.appendChild(link);
 }
 function delLightMode() {
