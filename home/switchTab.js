@@ -6,7 +6,7 @@ loadTab();
 // Helper Functions
 function fetchLocalStorage(key, defaultValue=null) {
 	if (localStorage.getItem(key) === null) {
-		console.debug("Value for" + key + " not found in the local storage. Setting it to the default value: " + defaultValue);
+		console.debug("Value for " + key + " not found in the local storage. Setting it to the default value: " + defaultValue);
 		localStorage.setItem(key, defaultValue);
 		return defaultValue;
 	}
