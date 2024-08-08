@@ -1,0 +1,81 @@
+/* Universal CSS Variables */
+:root {
+    /* Variables */
+    --page-padding: 35px;
+    --header-padding: 15px var(--page-padding);
+    --header-height: 50px;
+    --transition: 0.25s;
+}
+
+/* Overriding Classes */
+.text-highlight {
+    /* Text Properties */
+    color: var(--text-highlight) !important;
+
+    /* Change Cursor */
+    cursor: default !important;
+}
+
+/* Header ID */
+#sdev-header {
+    /* Characteristics */
+    height: var(--header-height);
+    padding: var(--header-padding);
+    margin: 0;
+
+    /* Flex Box */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Directory IDs */
+#sdev-directory {
+    /* Flex Box */
+    gap: var(--page-padding);
+}
+#sdev-directory > img {
+    /* Characteristics */
+    height: 100%;
+    width: auto;
+}
+#sdev-directory-list {
+    /* Flex Box */
+    gap: 10px;
+}
+#sdev-directory-list > .sdev-hyperlink {
+    /* Text Properties */
+    color: var(--text);
+    text-decoration: none;
+
+    /* Transition */
+    transition: var(--transition);
+}
+#sdev-directory-list > .sdev-hyperlink:hover {
+    /* Change Cursor */
+    cursor: pointer;
+}
+
+/* Settings IDs */
+#sdev-settings {
+    /* Flex Box */
+    gap: var(--page-padding);
+}
+#sdev-settings-lang {
+    /* Flex Box */
+    gap: 4px;
+    padding: 0 8px;
+}
+#sdev-settings-lang > .sdev-lang {
+    /* Transition */
+    transition: var(--transition);
+}
+#sdev-settings-lang > .sdev-lang:hover {
+    /* Change Cursor */
+    cursor: pointer;
+}
+#sdev-settings-theme {
+    /* Characteristics */
+    height: calc(var(--header-height) * 0.75);
+    width: auto;
+}

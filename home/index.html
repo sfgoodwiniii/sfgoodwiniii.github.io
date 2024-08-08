@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en_US">
+
+
+<head>
+    <!-- Page Adjustments -->
+    <title>Welcome!</title>
+
+    <!-- Load Template HTML -->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script defer>
+		$(function(){ $("#page-header").load(".templates/header/header.html"); });
+		// $(function(){ $("#page-header").load(".templates/footer/footer.html"); });
+    </script>
+
+    <!-- Page Style(s) -->
+    <link rel="stylesheet" href="/home/home.css">
+
+    <!-- Page Script(s) -->
+    <script defer src="/home/home.js"></script>
+    <script defer src="/home/switchTab.js"></script>
+</head>
+
+
+<body>
+
+<!-- SDEV Header -->
+<div id="page-header"></div>
+
+<!-- Main Content -->
+<div id="TBD">
+    <div id="title" class="sdev-row-list">Stanley Goodwin</div>
+    <div id="tile-grid-selector" class="tab-bar sdev-row-list">
+        <div class="tab" onclick="switchTab('home')">Home</div>
+        <div class="tab" onclick="switchTab('about')">About</div>
+        <div class="tab" onclick="switchTab('portfolio')">Portfolio</div>
+        <div class="tab" onclick="switchTab('contact')">Contact</div>
+    </div>
+    <div class="tile-grid"></div>
+</div>
+
+<!-- SDEV Footer -->
+<div id="page-footer"></div>
+
+</body>
+
+
+</html>
