@@ -49,7 +49,7 @@ function loadDarkMode() {
 }
 function loadLightMode() {
 	console.debug("Selected Theme: Light");
-	document.getElementById("sdev-settings-theme").src = "/.resources/images/sun.png";
+	document.getElementById("sdev-settings-theme").src = "../.resources/images/sun.png";
 	document.getElementById("sdev-settings-theme").style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
