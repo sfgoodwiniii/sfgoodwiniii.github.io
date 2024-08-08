@@ -1,4 +1,9 @@
-/* Default Types */
+/* Page CSS Variables */
+:root {
+
+}
+
+/* Webpage Classes */
 body {
     /* Characteristics */
     margin: 0;
@@ -10,33 +15,8 @@ body {
 
     /* Color */
     background-color: var(--background);
-
-    /* Transition */
-    transition: var(--transition);
 }
-
-
-
-
-/* Webpage Classes */
-
-.tab:hover {
-    cursor: pointer;
-}
-
-
-#title {
-    /* Characteristics */
-    padding: 75px var(--page-padding) 25px var(--page-padding);
-    margin: 0;
-
-    /* Text Properties */
-    font-size: 4rem;
-    font-weight: normal;
-    color: var(--text-highlight);
-}
-
-#tab-bar {
+.tab-bar {
     /* Characteristics */
     height: 50px;
     padding: 0 var(--page-padding);
@@ -46,4 +26,19 @@ body {
     display: flex;
     justify-content: center;
     gap: 50px;
+}
+.tab:hover {
+    cursor: pointer;
+}
+
+/* HTML IDs */
+#title {
+    /* Characteristics */
+    padding: 75px var(--page-padding) 25px var(--page-padding);
+    margin: 0;
+
+    /* Text Properties */
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--text-highlight);
 }

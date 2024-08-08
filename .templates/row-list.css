@@ -1,0 +1,10 @@
+.sdev-row-list {
+    /* Characteristics */
+    height: 100%;
+
+    /* Flex Box */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

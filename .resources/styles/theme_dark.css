@@ -1,9 +1,6 @@
+/* Universal CSS Variables */
 :root {
     --text: #9882ae;
     --text-highlight: #eeccff;
     --background: #28242b;
-}
-
-#darkmode-toggle > img {
-    filter: invert(1);
 }

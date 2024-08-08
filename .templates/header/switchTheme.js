@@ -1,4 +1,21 @@
-function changeTheme() {
+// Constants
+PARENT = "sdev-settings-lang";
+DEFAULT = "EN";
+loadThemeStartup();
+
+// Page Startup
+function loadThemeStartup() {
+
+	// Fetch the theme from the local storage
+	const theme = fetchLocalStorage("theme", "light");
+
+	// Load the theme in the page
+	if (theme === "dark") { loadDarkMode(); }
+	else                  { loadLightMode(); }
+}
+
+// Switch Theme
+function switchTheme() {
 
 	// Fetch the theme from the local storage
 	const theme = localStorage.getItem("theme");
@@ -21,18 +38,24 @@ function changeTheme() {
 		loadDarkMode();
 	}
 }
+
+// Load Themes
 function loadDarkMode() {
-	console.info("Set Theme: Dark mode");
-	document.getElementById("theme").src = ".resources/images/moon.png";
+	console.debug("Selected Theme: Dark");
+	document.getElementById("sdev-settings-theme").src = ".resources/images/moon.png";
+	document.getElementById("sdev-settings-theme").style.filter = "invert(100%)";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
-	console.info("Set Theme: Light mode");
-	document.getElementById("theme").src = ".resources/images/sun.png";
+	console.debug("Selected Theme: Light");
+	document.getElementById("sdev-settings-theme").src = ".resources/images/sun.png";
+	document.getElementById("sdev-settings-theme").style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
 }
+
+// Set / Remove Themes
 function setDarkMode() {
 	const head = document.head;
 	const link = document.createElement("link");
@@ -67,18 +90,3 @@ function delLightMode() {
 		}
 	}
 }
-function loadDefaultTheme() {
-
-	// If it's the first time, set it to dark
-	if (localStorage.getItem("theme") == null) {
-		localStorage.setItem("theme", "dark");
-	}
-
-	// Fetch the theme from the local storage
-	const theme = localStorage.getItem("theme");
-
-	// Load the theme in the page
-	if (theme === "dark") { loadDarkMode(); }
-	else                  { loadLightMode(); }
-}
-loadDefaultTheme();

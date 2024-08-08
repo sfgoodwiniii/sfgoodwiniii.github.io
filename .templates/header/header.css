@@ -1,3 +1,4 @@
+/* Universal CSS Variables */
 :root {
     /* Variables */
     --page-padding: 35px;
@@ -6,18 +7,17 @@
     --transition: 0.25s;
 }
 
-
 /* Overriding Classes */
 .text-highlight {
+    /* Text Properties */
     color: var(--text-highlight) !important;
+
+    /* Change Cursor */
     cursor: default !important;
-    transition: var(--transition) !important;
 }
 
-
-/* Webpage Classes */
-
-.toolbar {
+/* Header ID */
+#sdev-header {
     /* Characteristics */
     height: var(--header-height);
     padding: var(--header-padding);
@@ -27,24 +27,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    /* Transition */
-    transition: var(--transition);
 }
 
-#directory {
+/* Directory IDs */
+#sdev-directory {
+    /* Flex Box */
     gap: var(--page-padding);
 }
-#logo {
+#sdev-directory > img {
     /* Characteristics */
     height: 100%;
     width: auto;
 }
-#directory-list {
+#sdev-directory-list {
+    /* Flex Box */
     gap: 10px;
 }
-
-.nav {
+#sdev-directory-list > .sdev-hyperlink {
     /* Text Properties */
     color: var(--text);
     text-decoration: none;
@@ -52,49 +51,31 @@
     /* Transition */
     transition: var(--transition);
 }
-.nav:hover {
+#sdev-directory-list > .sdev-hyperlink:hover {
     /* Change Cursor */
     cursor: pointer;
 }
 
-
-
-
-
-#settings {
+/* Settings IDs */
+#sdev-settings {
+    /* Flex Box */
     gap: var(--page-padding);
 }
-#language-selector {
+#sdev-settings-lang {
+    /* Flex Box */
     gap: 4px;
     padding: 0 8px;
 }
-#darkmode-toggle {
-
+#sdev-settings-lang > .sdev-lang {
+    /* Transition */
+    transition: var(--transition);
 }
-#theme {
+#sdev-settings-lang > .sdev-lang:hover {
+    /* Change Cursor */
+    cursor: pointer;
+}
+#sdev-settings-theme {
     /* Characteristics */
     height: calc(var(--header-height) * 0.75);
     width: auto;
 }
-.lang {
-    transition: var(--transition);
-}
-.lang:hover {
-    cursor: pointer;
-}
-
-
-
-
-.row-list {
-    /* Characteristics */
-    height: 100%;
-
-    /* Flex Box */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-
