@@ -1,0 +1,121 @@
+body {
+    background: rgb(204,204,204);
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0 auto;
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto 0.5cm;
+    position: relative;
+}
+
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
+
+@page {
+    size: 21cm 29.7cm;
+    margin: 0mm;
+}
+.page {
+
+}
+
+
+
+
+
+
+
+
+
+:root {
+    --header-top-padding: 1.0cm;
+    --header-side-padding: 2.0cm;
+    --header-bottom-padding: 0.5cm;
+    --body-top-padding: 0.5cm;
+    --body-side-padding: 1.0cm;
+    --body-bottom-padding: 0.5cm;
+    --list-padding: 0.5em;
+    --list-spacing: 1.15em;
+    --text-black: #000000;
+    --text-blue: #524fd6;
+    --text-gray: #9a9a9a;
+    --text-size-header: 1.5em;
+    --text-size-section: 1.2em;
+}
+
+/* Resume Sections */
+.section {
+    /* Size */
+    padding: var(--body-top-padding) var(--body-side-padding) var(--body-bottom-padding);
+}
+.section > h2 {
+    /* Size */
+    margin: 0;
+    padding: 0;
+
+    /* Text */
+    font-size: var(--text-size-section);
+    font-weight: bold;
+    color: var(--text-black);
+}
+.section > hr {
+    /* Style */
+    border-top: 2px solid var(--text-black);
+}
+.section-list {}
+.section-list > hr {
+    /* Style */
+    border-top: 1px solid var(--text-gray);
+
+    /*Add more space between sections*/
+    margin-top: calc(var(--list-padding) * 2);
+    margin-bottom: calc(var(--list-padding) * 2);
+}
+
+/* Experience Section */
+#experience-list {}
+.experience-item {}
+.experience-item > .header {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.experience-item > .header > .left {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+}
+.experience-item > .header > .left > .title {
+    /* Text */
+    color: var(--text-blue);
+    font-weight: bold;
+}
+.experience-item > .header > .left > .place {
+    /* Text */
+    color: var(--text-black);
+}
+.experience-item > .header > .right {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.experience-item > .header > .right > .date {
+    /* Text */
+    color: var(--text-black);
+    font-style: italic;
+}
+.experience-item > .list {
+    list-style-type: ">   ";
+    margin: var(--list-padding) 0;
+    line-height: var(--list-spacing);
+}
+
+
