@@ -67,6 +67,9 @@ page[size="A4"] {
 .section > hr {
     /* Style */
     border-top: 2px solid var(--text-black);
+
+    /*Add more space between sections*/
+    margin-bottom: calc(var(--list-padding) * 2);
 }
 .section-list {}
 .section-list > hr {
