@@ -15,6 +15,9 @@ body {
 
     /* Color */
     background-color: var(--background);
+
+    /* Transition */
+    transition: var(--transition);
 }
 .tab-bar {
     /* Characteristics */
@@ -26,6 +29,9 @@ body {
     display: flex;
     justify-content: center;
     gap: 50px;
+
+    /* Transition */
+    transition: var(--transition);
 }
 .tab:hover {
     cursor: pointer;
@@ -41,4 +47,7 @@ body {
     font-size: 4rem;
     font-weight: normal;
     color: var(--text-highlight);
+
+    /* Transition */
+    transition: var(--transition);
 }
