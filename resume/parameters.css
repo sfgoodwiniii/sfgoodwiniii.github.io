@@ -1,12 +1,12 @@
 :root {
     /* Header Padding */
-    --header-top-padding: 1.0cm;
+    --header-top-padding: 1.5cm;
     --header-side-padding: 2.0cm;
-    --header-bottom-padding: 0.60cm;
+    --header-bottom-padding: 0.8cm;
 
     /* Body Padding */
     --body-top-padding: 0.30cm;
-    --body-side-padding: 1.0cm;
+    --body-side-padding: 1.25cm;
     --body-bottom-padding: 0.30cm;
 
     /* List Styling */
