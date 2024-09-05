@@ -1,4 +1,4 @@
-/* Resume Header */
+/* Header Boxes */
 #header {
     /* Size */
     padding: var(--header-top-padding) var(--header-side-padding) var(--header-bottom-padding);
@@ -38,6 +38,7 @@
     justify-content: space-evenly;
 }
 
+/* Item Classes */
 #name {
     /* Text */
     color: var(--text-black);

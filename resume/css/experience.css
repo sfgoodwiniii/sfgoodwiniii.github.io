@@ -1,0 +1,41 @@
+/* Experience Boxes */
+#experience-list {}
+.experience-item {}
+.experience-item > .header {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.experience-item > .header > .left {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+}
+.experience-item > .header > .right {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Item Classes */
+.experience-item > .header > .left > .title {
+    /* Text */
+    color: var(--text-blue);
+    font-weight: bold;
+}
+.experience-item > .header > .left > .place {
+    /* Text */
+    color: var(--text-black);
+}
+.experience-item > .header > .right > .date {
+    /* Text */
+    color: var(--text-black);
+    font-style: italic;
+}
+.experience-item > .list {
+    list-style-type: ">   ";
+    margin: var(--list-padding) 0;
+    line-height: var(--list-spacing);
+}

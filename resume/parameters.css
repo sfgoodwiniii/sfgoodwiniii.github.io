@@ -1,0 +1,25 @@
+:root {
+    /* Header Padding */
+    --header-top-padding: 1.0cm;
+    --header-side-padding: 2.0cm;
+    --header-bottom-padding: 0.60cm;
+
+    /* Body Padding */
+    --body-top-padding: 0.30cm;
+    --body-side-padding: 1.0cm;
+    --body-bottom-padding: 0.30cm;
+
+    /* List Styling */
+    --list-padding: 0.5em;
+    --list-spacing: 1.15em;
+
+    /* Text Colors */
+    --text-black: #000000;
+    --text-blue: #524fd6;
+    --text-gray: #9a9a9a;
+
+    /* Text Sizes */
+    --text-size-header: 1.5em;
+    --text-size-section: 1.2em;
+    --text-size-subsection: 1.0em;
+}
