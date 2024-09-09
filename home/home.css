@@ -1,53 +1,45 @@
-/* Page CSS Variables */
+/* CSS Variables */
 :root {
-
+    --page-padding: 50px;
+    --tab-spacing: 50px;
 }
 
-/* Webpage Classes */
-body {
-    /* Characteristics */
-    margin: 0;
-    padding: 0;
-
-    /* Text Properties */
-    font-family: Roboto, sans-serif;
-    color: var(--text);
-
-    /* Color */
-    background-color: var(--background);
-
-    /* Transition */
-    transition: var(--transition);
-}
+/* Box Classes */
 .tab-bar {
-    /* Characteristics */
+    /* Geometry */
     height: 50px;
     padding: 0 var(--page-padding);
     margin: 0;
 
-    /* Flex Box */
+    /* Flex */
     display: flex;
     justify-content: center;
-    gap: 50px;
-
-    /* Transition */
-    transition: var(--transition);
+    gap: var(--tab-spacing);
 }
+
+/* Box Objects */
+
+/* Item Classes */
 .tab:hover {
+    /* Cursor */
     cursor: pointer;
 }
 
-/* HTML IDs */
+/* Item Objects */
 #title {
     /* Characteristics */
     padding: 75px var(--page-padding) 25px var(--page-padding);
     margin: 0;
 
-    /* Text Properties */
+    /* Text */
+    color: var(--text-highlight);
     font-size: 4rem;
     font-weight: normal;
-    color: var(--text-highlight);
+
+    /* Flex */
+    display: flex;
+    justify-content: center;
 
     /* Transition */
-    transition: var(--transition);
+    transition: var(--theme-transition);
 }

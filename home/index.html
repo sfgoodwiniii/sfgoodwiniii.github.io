@@ -14,13 +14,15 @@
     </script>
     <script defer>
 		$(function(){ $("#page-header").load("/.templates/header/header.html"); });
-		// $(function(){ $("#page-header").load("/.templates/footer/footer.html"); });
+		$(function(){ $("#page-footer").load("/.templates/footer/footer.html"); });
     </script>
 
     <!-- Page Style(s) -->
+    <link rel="stylesheet" href="/.templates/page/default.css">
     <link rel="stylesheet" href="/home/home.css">
 
     <!-- Page Script(s) -->
+    <script defer src="/.templates/fetching.js"></script>
     <script defer src="/home/home.js"></script>
     <script defer src="/home/switchTab.js"></script>
 </head>
@@ -34,12 +36,12 @@
 <!-- Main Content -->
 <div id="TBD">
     <div id="title" class="sdev-row-list">Stanley Goodwin</div>
-    <div id="tile-grid-selector" class="tab-bar sdev-row-list">
+    <nav id="tile-grid-selector" class="tab-bar sdev-row-list">
         <div class="tab" onclick="switchTab('home')">Home</div>
         <div class="tab" onclick="switchTab('about')">About</div>
         <div class="tab" onclick="switchTab('portfolio')">Portfolio</div>
         <div class="tab" onclick="switchTab('contact')">Contact</div>
-    </div>
+    </nav>
     <div class="tile-grid"></div>
 </div>
 
