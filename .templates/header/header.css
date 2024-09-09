@@ -1,81 +1,121 @@
 /* Universal CSS Variables */
 :root {
     /* Variables */
-    --page-padding: 35px;
-    --header-padding: 15px var(--page-padding);
-    --header-height: 50px;
-    --transition: 0.25s;
+    --sdev-header__header-height: 50px;
+    --sdev-header__header-padding: 15px 35px;
+    --sdev-header__directory-gap: 35px;
+    --sdev-header__navbar-gap: 10px;
+    --sdev-header__settings-gap: 35px;
+    --sdev-header__language-gap: 4px;
+    --sdev-header__theme-gap: 10px;
+    --sdev-header__theme-icon-transition: 0.75s;
+    --sdev-header__theme-transition: var(--theme-transition, 0.25s);
 }
 
 /* Overriding Classes */
 .text-highlight {
-    /* Text Properties */
+    /* Text */
     color: var(--text-highlight) !important;
 
-    /* Change Cursor */
+    /* Cursor */
     cursor: default !important;
+
+    /* Transition */
+    transition: var(--theme-transition) !important;
 }
 
-/* Header ID */
-#sdev-header {
-    /* Characteristics */
-    height: var(--header-height);
-    padding: var(--header-padding);
+/* Box Classes */
+.sdev-header__padded-row-list {
+    /* Geometry */
+    height: 100%;
+
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Box Objects */
+#sdev-header__header {
+    /* Geometry */
+    height: var(--sdev-header__header-height);
+    padding: var(--sdev-header__header-padding);
     margin: 0;
 
-    /* Flex Box */
+    /* Color */
+    background-color: var(--background);
+
+    /* Text */
+    color: var(--text);
+
+    /* Flex */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    /* Transition */
+    transition: var(--sdev-header__theme-transition);
+}
+#sdev-header__directory {
+    /* Flex */
+    gap: var(--sdev-header__directory-gap);
+}
+#sdev-header__settings {
+    /* Flex */
+    gap: var(--sdev-header__settings-gap);
+}
+#sdev-header__language {
+    /* Flex */
+    gap: var(--sdev-header__language-gap);
+}
+#sdev-header__theme {
+    /* Flex */
+    gap: var(--sdev-header__theme-gap);
+}
+#sdev-header__navbar {
+    /* Flex */
+    gap: var(--sdev-header__navbar-gap);
 }
 
-/* Directory IDs */
-#sdev-directory {
-    /* Flex Box */
-    gap: var(--page-padding);
-}
-#sdev-directory > img {
-    /* Characteristics */
-    height: 100%;
-    width: auto;
-}
-#sdev-directory-list {
-    /* Flex Box */
-    gap: 10px;
-}
-#sdev-directory-list > .sdev-hyperlink {
-    /* Text Properties */
+/* Item Classes */
+.sdev-header__nav-link {
+    /* Text */
     color: var(--text);
     text-decoration: none;
 
     /* Transition */
-    transition: var(--transition);
+    transition: var(--sdev-header__theme-transition);
 }
-#sdev-directory-list > .sdev-hyperlink:hover {
-    /* Change Cursor */
+.sdev-header__nav-link:hover {
+    /* Text */
+    color: var(--text-highlight);
+}
+.sdev-header__lang-link {
+    /* Transition */
+    transition: var(--sdev-header__theme-transition);
+}
+.sdev-header__lang-link:hover {
+    /* Cursor */
+    cursor: pointer;
+}
+.sdev-header__theme-link {
+    /* Transition */
+    transition: var(--sdev-header__theme-icon-transition);
+}
+.sdev-header__theme-link:hover {
+    /* Cursor */
     cursor: pointer;
 }
 
-/* Settings IDs */
-#sdev-settings {
-    /* Flex Box */
-    gap: var(--page-padding);
+/* Item Objects */
+#sdev-header__directory-icon {
+    /* Geometry */
+    height: 100%;
+    width: auto;
 }
-#sdev-settings-lang {
-    /* Flex Box */
-    gap: 4px;
-    padding: 0 8px;
-}
-#sdev-settings-lang > .sdev-lang {
-    /* Transition */
-    transition: var(--transition);
-}
-#sdev-settings-lang > .sdev-lang:hover {
-    /* Change Cursor */
-    cursor: pointer;
-}
-#sdev-settings-theme {
-    /* Characteristics */
-    height: calc(var(--header-height) * 0.75);
+#sdev-header__theme-icon {
+    /* Geometry */
+    height: calc(var(--sdev-header__header-height) * 0.75);
     width: auto;
 }
