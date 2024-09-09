@@ -24,15 +24,18 @@
     /* Text */
     color: var(--text-blue);
     font-weight: bold;
+    text-decoration: none;
 }
 .experience-item > .header > .left > .place {
     /* Text */
     color: var(--text-black);
+    text-decoration: none;
 }
 .experience-item > .header > .right > .date {
     /* Text */
     color: var(--text-black);
     font-style: italic;
+    text-decoration: none;
 }
 .experience-item > .list {
     list-style-type: ">   ";

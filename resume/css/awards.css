@@ -21,9 +21,11 @@
     /* Text */
     color: var(--text-black);
     font-weight: normal;
+    text-decoration: none;
 }
 .award-item > .date {
     /* Text */
     color: var(--text-black);
     font-style: italic;
+    text-decoration: none;
 }

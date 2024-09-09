@@ -50,6 +50,7 @@
     /* Text */
     color: var(--text-blue);
     font-size: var(--text-size-header);
+    text-decoration: none;
 }
 #phone {
     /* Text */

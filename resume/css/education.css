@@ -24,19 +24,23 @@
     /* Text */
     color: var(--text-blue);
     font-weight: bold;
+    text-decoration: none;
 }
 .education-item > .header > .left > .place {
     /* Text */
     color: var(--text-black);
+    text-decoration: none;
 }
 .education-item > .header > .right > .date {
     /* Text */
     color: var(--text-black);
     font-style: italic;
+    text-decoration: none;
 }
 .education-item > .header > .right > .gpa {
     /* Text */
     color: var(--text-black);
+    text-decoration: none;
 }
 .education-item > .list {
     list-style-type: ">   ";
