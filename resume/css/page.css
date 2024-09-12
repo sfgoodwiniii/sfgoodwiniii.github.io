@@ -1,8 +1,8 @@
 /* Page Styling */
 body {
     background: rgb(204,204,204);
-    width: 21cm;
-    height: 29.7cm;
+    width: 8.5in;
+    height: 11.0in;
     margin: 0 auto;
 }
 page {
@@ -12,13 +12,11 @@ page {
     position: relative;
 }
 page[size="A4"] {
-    /*width: 21cm;*/
-    /*height: 29.7cm;*/
     width: 8.5in;
     height: 11.0in;
 }
 @page {
-    size: 21cm 29.7cm;
+    size: 8.5in 11.0in;
     margin: 0mm;
 }
 .page {

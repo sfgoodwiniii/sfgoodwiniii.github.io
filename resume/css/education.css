@@ -20,6 +20,7 @@
 }
 
 /* Item Classes */
+.education-item > .header > .left > .title > a,
 .education-item > .header > .left > .title {
     /* Text */
     color: var(--text-blue);
