@@ -49,7 +49,7 @@
 #title {
     /* Text */
     color: var(--text-blue);
-    font-size: var(--text-size-header);
+    font-size: calc(var(--text-size-header) * 1.0);
     text-decoration: none;
 }
 #phone {
