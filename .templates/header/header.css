@@ -13,7 +13,7 @@
 }
 
 /* Overriding Classes */
-.text-highlight {
+.sdev-header__text-highlight {
     /* Text */
     color: var(--text-highlight) !important;
 
@@ -21,7 +21,7 @@
     cursor: default !important;
 
     /* Transition */
-    transition: var(--theme-transition) !important;
+    transition: var(--sdev-header__theme-transition) !important;
 }
 
 /* Box Classes */

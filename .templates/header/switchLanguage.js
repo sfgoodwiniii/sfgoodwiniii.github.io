@@ -1,7 +1,7 @@
 // Constants
 PARENT = "sdev-header__language";
 DEFAULT_LANGUAGE = "EN";
-TEXT_HIGHLIGHT_CLASS = "text-highlight";
+TEXT_HIGHLIGHT_CLASS = "sdev-header__text-highlight";
 loadLangStartup();
 
 // Page Startup

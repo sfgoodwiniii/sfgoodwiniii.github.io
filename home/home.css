@@ -4,6 +4,15 @@
     --tab-spacing: 50px;
 }
 
+
+
+
+
+.text-highlight, .tab:hover {
+    text-decoration: underline !important;
+}
+
+
 /* Box Classes */
 .tab-bar {
     /* Geometry */

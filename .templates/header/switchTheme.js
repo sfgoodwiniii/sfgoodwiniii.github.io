@@ -1,6 +1,6 @@
 // Constants
 PARENT = "sdev-header__theme";
-DEFAULT_THEME = "light";
+DEFAULT_THEME = "dark";
 THEME_ICON_HTML = document.getElementById("sdev-header__theme-icon");
 loadThemeStartup();
 
