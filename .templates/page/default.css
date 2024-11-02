@@ -1,0 +1,33 @@
+/* Universal CSS Variables */
+:root {
+    --theme-transition: 0.35s;
+}
+
+/* Default Page */
+body {
+    /* Characteristics */
+    margin: 0;
+    padding: 0;
+
+    /* Text Properties */
+    font-family: Roboto, sans-serif;
+    color: var(--text);
+
+    /* Color */
+    background-color: var(--background);
+
+    /* Transition */
+    transition: var(--theme-transition);
+}
+
+/* Overriding Classes */
+.text-highlight {
+    /* Text */
+    color: var(--text-highlight) !important;
+
+    /* Cursor */
+    cursor: default !important;
+
+    /* Transition */
+    transition: var(--theme-transition) !important;
+}

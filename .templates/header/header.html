@@ -42,9 +42,9 @@
 
     <!-- Page Style(s) -->
     <link rel="stylesheet" href="/.templates/header/header.css">
-    <link rel="stylesheet" href="/.templates/row-list.css">
 
     <!-- Page Script(s) -->
+    <script defer src="/.templates/fetching.js"></script>
     <script defer src="/.templates/header/header.js"></script>
     <script defer src="/.templates/header/switchTheme.js"></script>
     <script defer src="/.templates/header/switchLanguage.js"></script>
@@ -52,26 +52,28 @@
 
 
 <body>
-<div id="sdev-header">
+<div id="sdev-header__header">
 
     <!-- Directory Container -->
-    <div id="sdev-directory" class="sdev-row-list">
-        <img src="/.resources/icons/favicon.ico" alt="Logo" onclick="favicon()">
-        <div id="sdev-directory-list" class="sdev-row-list">
-            <a class="sdev-hyperlink" href="https://staniel.dev">Home</a>|
-            <a class="sdev-hyperlink" href="https://staniel.dev/about">About</a>|
-            <a class="sdev-hyperlink" href="https://staniel.dev/portfolio">Portfolio</a>|
-            <a class="sdev-hyperlink" href="https://staniel.dev/contact">Contact</a>
-        </div>
+    <div id="sdev-header__directory" class="sdev-header__padded-row-list">
+        <img id="sdev-header__directory-icon" src="/.resources/icons/favicon.ico" alt="Logo" onclick="favicon()">
+        <nav id="sdev-header__navbar" class="sdev-header__padded-row-list">
+            <a class="sdev-header__nav-link" href="/home">Home</a>|
+            <a class="sdev-header__nav-link" href="/about-me">About</a>|
+            <a class="sdev-header__nav-link" href="/portfolio">Portfolio</a>|
+            <a class="sdev-header__nav-link" href="/contact">Contact</a>
+        </nav>
     </div>
 
     <!-- Settings Container -->
-    <div id="sdev-settings" class="sdev-row-list">
-        <div id="sdev-settings-lang" class="sdev-row-list">
-            <a class="sdev-lang" onclick="switchLanguage('EN')">EN</a>|
-            <a class="sdev-lang" onclick="switchLanguage('FR')">FR</a>
+    <div id="sdev-header__settings" class="sdev-header__padded-row-list">
+        <div id="sdev-header__language" class="sdev-header__padded-row-list">
+            <a class="sdev-header__lang-link" onclick="switchLanguage('EN')">EN</a>|
+            <a class="sdev-header__lang-link" onclick="switchLanguage('FR')">FR</a>
         </div>
-        <img id="sdev-settings-theme" src="/.resources/images/sun.png" alt="Toggle Darkmode" onclick="switchTheme()">
+        <div id="sdev-header__theme" class="sdev-header__padded-row-list">
+            <img id="sdev-header__theme-icon" class="sdev-header__theme-link" src="/.resources/images/sun.png" alt="Toggle Darkmode" onclick="switchTheme()">
+        </div>
     </div>
 
 </div>

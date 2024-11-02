@@ -1,6 +1,7 @@
 // Constants
-PARENT = "sdev-settings-lang";
-DEFAULT = "EN";
+PARENT = "sdev-header__theme";
+DEFAULT_THEME = "light";
+THEME_ICON_HTML = document.getElementById("sdev-header__theme-icon");
 loadThemeStartup();
 
 // Page Startup
@@ -42,15 +43,15 @@ function switchTheme() {
 // Load Themes
 function loadDarkMode() {
 	console.debug("Selected Theme: Dark");
-	document.getElementById("sdev-settings-theme").src = "/.resources/images/moon.png";
-	document.getElementById("sdev-settings-theme").style.filter = "invert(100%)";
+	THEME_ICON_HTML.src = "/.resources/images/moon.png";
+	THEME_ICON_HTML.style.filter = "invert(100%)";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
 	console.debug("Selected Theme: Light");
-	document.getElementById("sdev-settings-theme").src = "/.resources/images/sun.png";
-	document.getElementById("sdev-settings-theme").style.filter = "invert(0%)";
+	THEME_ICON_HTML.src = "/.resources/images/sun.png";
+	THEME_ICON_HTML.style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
 }
