@@ -45,9 +45,9 @@
 
     <!-- Page Script(s) -->
     <script src="/.templates/scripts/fetching.js"></script>
-    <script src="/.templates/header/header.js"></script>
-    <script src="/.templates/header/switchTheme.js"></script>
-    <script src="/.templates/header/switchLanguage.js"></script>
+    <script defer src="/.templates/header/header.js"></script>
+    <script defer src="/.templates/scripts/switchTheme.js"></script>
+    <script defer src="/.templates/scripts/switchLanguage.js"></script>
 </head>
 
 
@@ -58,11 +58,11 @@
     <div id="sdev-header__directory" class="sdev-header__padded-row-list">
         <img id="sdev-header__directory-icon" src="/.resources/icons/favicon.ico" alt="Logo" onclick="favicon()">
         <nav id="sdev-header__navbar" class="sdev-header__padded-row-list">
-            <a class="sdev-header__nav-link" href="/home">Home</a>|
-            <a class="sdev-header__nav-link" href="/about-me">About</a>|
-            <a class="sdev-header__nav-link" href="/portfolio">Portfolio</a>|
-            <a class="sdev-header__nav-link" href="/contact">Contact</a>|
-            <a class="sdev-header__nav-link" href="/console">Console</a>
+            <a class="sdev-header__nav-link" id="sdev-header__nav_home" href="/home">Home</a>|
+            <a class="sdev-header__nav-link" id="sdev-header__nav_about-me" href="/about-me">About</a>|
+            <a class="sdev-header__nav-link" id="sdev-header__nav_portfolio" href="/portfolio">Portfolio</a>|
+            <a class="sdev-header__nav-link" id="sdev-header__nav_contact" href="/contact">Contact</a>|
+            <a class="sdev-header__nav-link" id="sdev-header__nav_console" href="/console">Console</a>
         </nav>
     </div>
 

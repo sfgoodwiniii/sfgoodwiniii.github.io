@@ -13,7 +13,9 @@
             crossorigin="anonymous">
     </script>
     <script defer>
-		$(function(){ $("#page-header").load("/.templates/header/header.html"); });
+		$(function(){ $("#page-header").load("/.templates/header/header.html",
+            function(){ $("#sdev-header__nav_home").addClass("sdev-header__text-highlight"); });
+        });
 		// $(function(){ $("#page-footer").load("/.templates/footer/footer.html"); });
     </script>
 
@@ -23,8 +25,8 @@
 
     <!-- Page Script(s) -->
     <script src="/.templates/scripts/fetching.js"></script>
-    <script src="/home/home.js"></script>
-    <script src="/home/switchTab.js"></script>
+    <script defer src="/home/home.js"></script>
+    <script defer src="/home/switchTab.js"></script>
 </head>
 
 

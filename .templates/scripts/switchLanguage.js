@@ -1,18 +1,16 @@
 // Constants
-PARENT = "sdev-header__language";
 DEFAULT_LANGUAGE = "EN";
-TEXT_HIGHLIGHT_CLASS = "sdev-header__text-highlight";
+PARENT_ID = "sdev-header__language";
+HEADER_TEXT_HIGHLIGHT_CLASS = "sdev-header__text-highlight";
 loadLangStartup();
 
 // Page Startup
 function loadLangStartup() {
 
-	// Fetch the language from the local storage
+	// Add the highlight to the current language
 	const langID = fetchLocalStorage("lang", DEFAULT_LANGUAGE);
-
-	// Highlight the stored language
-	const langHTML = fetchObjectHTML(PARENT, langID);
-		  langHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
+	const langHTML = fetchObjectHTML(PARENT_ID, langID);
+		  langHTML.classList.add(HEADER_TEXT_HIGHLIGHT_CLASS);
 
 	// Load the content for the language
 	loadLangContent(langID);
@@ -26,12 +24,12 @@ function switchLanguage(langID) {
 
 	// Remove the highlight from the previous language
 	const previousLangID = fetchLocalStorage("lang");
-	const previousLangHTML = fetchObjectHTML(PARENT, previousLangID);
-		  previousLangHTML.classList.remove(TEXT_HIGHLIGHT_CLASS);
+	const previousLangHTML = fetchObjectHTML(PARENT_ID, previousLangID);
+		  previousLangHTML.classList.remove(HEADER_TEXT_HIGHLIGHT_CLASS);
 
 	// Highlight the clicked language
-	const langHTML = fetchObjectHTML(PARENT, langID);
-		  langHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
+	const langHTML = fetchObjectHTML(PARENT_ID, langID);
+		  langHTML.classList.add(HEADER_TEXT_HIGHLIGHT_CLASS);
 
 	// Save the selected language to the local storage
 	localStorage.setItem("lang", langID);

@@ -1,17 +1,13 @@
 // Constants
-PARENT = "sdev-header__theme";
 DEFAULT_THEME = "dark";
-THEME_ICON_HTML = document.getElementById("sdev-header__theme-icon");
+TOGGLE_HTML = document.getElementById("sdev-header__theme-icon");
+BODY = document.getElementsByTagName("body")[0];
 loadThemeStartup();
 
 // Page Startup
 function loadThemeStartup() {
-
-	// Fetch the theme from the local storage
-	const theme = fetchLocalStorage("theme", "light");
-
-	// Load the theme in the page
-	if (theme === "dark") { loadDarkMode(); }
+	const theme = fetchLocalStorage("theme", DEFAULT_THEME);
+	if (theme === "dark") { loadDarkMode();  }
 	else                  { loadLightMode(); }
 }
 
@@ -19,39 +15,36 @@ function loadThemeStartup() {
 function switchTheme() {
 
 	// Fetch the theme from the local storage
-	const theme = localStorage.getItem("theme");
+	const current_theme = fetchLocalStorage("theme");
 
 	// Change the theme
-	if (theme === "dark") {
-
-		// Swap the theme in the local storage
-		localStorage.setItem("theme", "light");
-
-		// Load the light mode
-		loadLightMode();
+	if (current_theme === "dark") {
+		localStorage.setItem("theme", "light");  // Swap the theme in the local storage
+		loadLightMode();                         // Load the light mode
+		BODY.style.transition = "var(--theme-transition, 0.25s)";
+	}
+	else if (current_theme === "light") {
+		localStorage.setItem("theme", "dark");  // Swap the theme in the local storage
+		loadDarkMode();                         // Load the dark mode
+		BODY.style.transition = "var(--theme-transition, 0.25s)";
 	}
 	else {
-
-		// Swap the theme in the local storage
-		localStorage.setItem("theme", "dark");
-
-		// Load the dark mode
-		loadDarkMode();
+		console.error("Invalid Theme: " + current_theme);
 	}
 }
 
 // Load Themes
 function loadDarkMode() {
 	console.debug("Selected Theme: Dark");
-	THEME_ICON_HTML.src = "/.resources/images/moon.png";
-	THEME_ICON_HTML.style.filter = "invert(100%)";
+	TOGGLE_HTML.src = "/.resources/images/moon.png";
+	TOGGLE_HTML.style.filter = "invert(100%)";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
 	console.debug("Selected Theme: Light");
-	THEME_ICON_HTML.src = "/.resources/images/sun.png";
-	THEME_ICON_HTML.style.filter = "invert(0%)";
+	TOGGLE_HTML.src = "/.resources/images/sun.png";
+	TOGGLE_HTML.style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
 }

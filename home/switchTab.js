@@ -1,22 +1,16 @@
 // Constants
-PARENT = "tile-grid-selector";
 DEFAULT_TAB = "home".toLowerCase();
+PARENT = "tile-grid-selector";
 TEXT_HIGHLIGHT_CLASS = "text-highlight";
 loadTab();
-
-
-// TODO THIS IS BROKEN, FIX IT
-
 
 // Page Startup
 function loadTab() {
 
-	// Fetch the tab from the local storage
+	// Add the highlight to the current tab
 	const tabID = fetchLocalStorage("tab", DEFAULT_TAB);
-
-	// Highlight the stored tab
 	const tabHTML = fetchObjectHTML(PARENT, tabID);
-		  tabHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
+	      tabHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
 
 	// Load the content for the tab
 	loadTabContent(tabID);
@@ -34,11 +28,11 @@ function switchTab(childPseudoID) {
 	// Remove the highlight from the previous tab
 	const previousTabID = fetchLocalStorage("tab");
 	const previousTabHTML = fetchObjectHTML(PARENT, previousTabID);
-		  previousTabHTML.classList.remove(TEXT_HIGHLIGHT_CLASS);
+	      previousTabHTML.classList.remove(TEXT_HIGHLIGHT_CLASS);
 
 	// Highlight the clicked tab
 	const tabHTML = fetchObjectHTML(PARENT, childPseudoID);
-		  tabHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
+	      tabHTML.classList.add(TEXT_HIGHLIGHT_CLASS);
 
 	// Save the selected tab to the local storage
 	localStorage.setItem("tab", childPseudoID);
