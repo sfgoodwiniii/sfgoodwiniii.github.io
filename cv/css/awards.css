@@ -1,0 +1,31 @@
+/* Awards Boxes */
+#awards {
+    /* Size */
+    padding-top: var(--header-top-padding);
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#award-list {}
+.award-item {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Item Classes */
+.award-item > .title {
+    /* Text */
+    color: var(--text-black);
+    font-weight: normal;
+    text-decoration: none;
+}
+.award-item > .date {
+    /* Text */
+    color: var(--text-black);
+    font-style: italic;
+    text-decoration: none;
+}

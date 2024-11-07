@@ -1,0 +1,78 @@
+/* Header Boxes */
+#header {
+    /* Size */
+    padding: var(--header-top-padding) var(--header-side-padding) var(--header-bottom-padding);
+
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#header-left {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#header-right {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+}
+#contact-left {
+    /* Text */
+    font-weight: bold;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#contact-right {
+    /* Size */
+    padding: 0 0 0 0.75cm;
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* Item Classes */
+#name {
+    /* Text */
+    color: var(--text-black);
+    font-size: var(--text-size-header);
+    font-weight: bold;
+    text-decoration: none;
+}
+#title {
+    /* Text */
+    color: var(--text-blue);
+    font-size: calc(var(--text-size-header) * 1.0);
+    text-decoration: none;
+}
+#phone {
+    /* Text */
+    color: var(--text-black);
+    text-decoration: none;
+}
+#email {
+    /* Text */
+    color: var(--text-black);
+    text-decoration: none;
+}
+#website {
+    /* Text */
+    color: var(--text-black);
+    text-decoration: none;
+}
+#header-quotation {
+    /* Size */
+    padding: var(--header-top-padding) var(--header-side-padding) var(--header-bottom-padding);
+
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

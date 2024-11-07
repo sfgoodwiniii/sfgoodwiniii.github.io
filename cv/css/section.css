@@ -1,0 +1,31 @@
+/* Resume Sections */
+.section {
+    /* Size */
+    padding: var(--body-top-padding) var(--body-side-padding) var(--body-bottom-padding);
+}
+.section > h2 {
+    /* Size */
+    margin: 0;
+    padding: 0;
+
+    /* Text */
+    font-size: var(--text-size-section);
+    font-weight: bold;
+    color: var(--text-black);
+}
+.section > hr {
+    /* Style */
+    border-top: 2px solid var(--text-black);
+
+    /*Add more space between sections*/
+    margin-bottom: calc(var(--list-padding) * 1.25);
+}
+.section-list {}
+.section-list > hr {
+    /* Style */
+    border-top: 1px solid var(--text-gray);
+
+    /*Add more space between sections*/
+    margin-top: calc(var(--list-padding) * 2);
+    margin-bottom: calc(var(--list-padding) * 2);
+}
