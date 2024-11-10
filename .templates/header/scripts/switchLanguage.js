@@ -13,7 +13,12 @@ function loadLangStartup() {
 		  langHTML.classList.add(LANGUAGE_TEXT_HIGHLIGHT_CLASS);
 
 	// Load the content for the language
-	loadLangContent(langID);
+	try {
+		loadLangContent(langID);
+	} catch (error) {
+		console.error("Implementation of loadLangContent(langID) is missing.\nError: " + error);
+		debugLoadLangContent(langID);
+	}
 }
 
 // Switch Language
@@ -35,15 +40,20 @@ function switchLanguage(langID) {
 	localStorage.setItem("lang", langID);
 
 	// Load the content for the language
-	loadLangContent(langID);
+	try {
+		loadLangContent(langID);
+	} catch (error) {
+		console.error("Implementation of loadLangContent(langID) is missing.\nError: " + error);
+		debugLoadLangContent(langID);
+	}
 }
 
-// [TODO Add Actual Code] Load the content for the language
-function loadLangContent(langID) {
+// Debug Language Content
+function debugLoadLangContent(langID) {
 	const langIDtoContent = {
 		"EN": "English",
 		"ES": "Spanish",
 		"FR": "French"
 	};
-	console.debug("Selected Language: " + langIDtoContent[langID]);
+	console.debug("[HEADER] Selected Language: " + langIDtoContent[langID]);
 }

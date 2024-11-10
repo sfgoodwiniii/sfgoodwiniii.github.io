@@ -36,14 +36,14 @@ function switchTheme() {
 // Load Themes
 function loadDarkMode() {
 	console.debug("Selected Theme: Dark");
-	THEME_TOGGLE_HTML.src = "/.resources/images/moon.png";
+	THEME_TOGGLE_HTML.src = "/.templates/header/images/moon.png";
 	THEME_TOGGLE_HTML.style.filter = "invert(100%)";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
 	console.debug("Selected Theme: Light");
-	THEME_TOGGLE_HTML.src = "/.resources/images/sun.png";
+	THEME_TOGGLE_HTML.src = "/.templates/header/images/sun.png";
 	THEME_TOGGLE_HTML.style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
