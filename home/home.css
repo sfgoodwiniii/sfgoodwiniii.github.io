@@ -22,7 +22,7 @@
 /* Item Classes */
 .tab {
     /* Transition */
-    transition: var(--theme-transition);
+    transition: var(--theme-transition, 0.25s);
 }
 .tab:hover {
     /* Text */

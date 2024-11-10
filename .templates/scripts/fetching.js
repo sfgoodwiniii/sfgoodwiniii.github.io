@@ -1,9 +1,8 @@
-// Fetches a key from the local storage, if it doesn't exist, sets it to the default value
-function fetchLocalStorage(key, defaultValue=null) {
+// Fetches a key from the local storage. If it doesn't exist, sets it to the default value specified.
+function fetchLocalStorage(key, keyDefaultValue=null) {
     if (localStorage.getItem(key) === null) {
-        console.debug("Value for " + key + " not found in the local storage. Setting it to the default value: " + defaultValue);
-        localStorage.setItem(key, defaultValue);
-        return defaultValue;
+        console.debug("Value for " + key + " not found in the local storage. Setting it to the default value: " + keyDefaultValue);
+        localStorage.setItem(key, keyDefaultValue);
     }
     return localStorage.getItem(key);
 }
