@@ -12,18 +12,6 @@
     --sdev-header__theme-transition: var(--theme-transition, 0.25s);
 }
 
-/* Overriding Classes */
-.sdev-header__text-highlight {
-    /* Text */
-    color: var(--text-highlight) !important;
-
-    /* Cursor */
-    cursor: default !important;
-
-    /* Transition */
-    transition: var(--sdev-header__theme-transition) !important;
-}
-
 /* Box Classes */
 .sdev-header__padded-row-list {
     /* Geometry */

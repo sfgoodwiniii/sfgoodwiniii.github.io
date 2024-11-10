@@ -14,7 +14,7 @@
     </script>
     <script defer>
 		$(function(){ $("#page-header").load("/.templates/header/header.html",
-            function(){ $("#sdev-header__nav-home").addClass("sdev-header__text-highlight"); });
+            function(){ $("#sdev-header__nav-home").addClass("sdev__text-highlight"); });
         });
 		// $(function(){ $("#page-footer").load("/.templates/footer/footer.html"); });
     </script>
@@ -39,10 +39,10 @@
 <div id="TBD">
     <div id="title" class="sdev-row-list">Stanley Goodwin</div>
     <nav id="tile-grid-selector" class="tab-bar sdev-row-list">
-        <div class="tab" onclick="switchTab('home')">Home</div>
-        <div class="tab" onclick="switchTab('about')">About</div>
-        <div class="tab" onclick="switchTab('portfolio')">Portfolio</div>
-        <div class="tab" onclick="switchTab('contact')">Contact</div>
+        <div class="tab" id="tab-home" onclick="switchTab('home')">Home</div>
+        <div class="tab" id="tab-about" onclick="switchTab('about')">About</div>
+        <div class="tab" id="tab-portfolio" onclick="switchTab('portfolio')">Portfolio</div>
+        <div class="tab" id="tab-contact" onclick="switchTab('contact')">Contact</div>
     </nav>
     <div class="tile-grid"></div>
 </div>

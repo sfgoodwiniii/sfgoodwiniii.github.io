@@ -6,7 +6,7 @@
 }
 
 /* Increased accessibility  */
-.sdev-header__text-highlight {
+.sdev__text-highlight {
     text-decoration: underline !important;
 }
 .sdev-header__nav-link:hover {

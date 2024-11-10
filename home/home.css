@@ -1,5 +1,6 @@
-/* CSS Variables */
+/* Universal CSS Variables */
 :root {
+    /* Variables */
     --page-padding: 50px;
     --tab-spacing: 50px;
 }
