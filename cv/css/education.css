@@ -1,0 +1,50 @@
+/* Education Boxes */
+#education-list {}
+.education-item {}
+.education-item > .header {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.education-item > .header > .left {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+}
+.education-item > .header > .right {
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Item Classes */
+.education-item > .header > .left > .title > a,
+.education-item > .header > .left > .title {
+    /* Text */
+    color: var(--text-blue);
+    font-weight: bold;
+    text-decoration: none;
+}
+.education-item > .header > .left > .place {
+    /* Text */
+    color: var(--text-black);
+    text-decoration: none;
+}
+.education-item > .header > .right > .date {
+    /* Text */
+    color: var(--text-black);
+    font-style: italic;
+    text-decoration: none;
+}
+.education-item > .header > .right > .gpa {
+    /* Text */
+    color: var(--text-black);
+    text-decoration: none;
+}
+.education-item > .list {
+    list-style-type: ">   ";
+    margin: var(--list-padding) 0;
+    line-height: var(--list-spacing);
+}

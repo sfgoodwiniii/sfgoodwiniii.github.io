@@ -1,0 +1,23 @@
+/* Skills Boxes */
+#skills-list {}
+.skills-item {
+    /* Size */
+    margin-bottom: var(--list-padding);
+}
+
+/* Item Classes */
+.skills-item > .title {
+    /* Size */
+    margin: 0;
+    padding: 0;
+
+    /* Text */
+    font-size: var(--text-size-subsection);
+    color: var(--text-blue);
+    font-weight: bold;
+
+}
+.skills-item > .list {
+    /* Text */
+    color: var(--text-black);
+}
