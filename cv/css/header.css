@@ -1,7 +1,7 @@
 /* Header Boxes */
 #header {
     /* Size */
-    padding: var(--header-top-padding) var(--header-side-padding) var(--header-bottom-padding);
+    padding: var(--header-top-padding) var(--header-side-padding) var(--body-bottom-padding);
 
     /* Flex */
     display: flex;
@@ -69,10 +69,9 @@
 }
 #header-quotation {
     /* Size */
-    padding: var(--header-top-padding) var(--header-side-padding) var(--header-bottom-padding);
 
     /* Flex */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
