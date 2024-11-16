@@ -1,18 +1,18 @@
-/* Experience Boxes */
-#experience-list {}
-.experience-item {}
-.experience-item > .header {
+/* Project Boxes */
+#projects-list {}
+.projects-item {}
+.projects-item > .header {
     /* Flex */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.experience-item > .header > .left {
+.projects-item > .header > .left {
     /* Flex */
     display: flex;
     flex-direction: column;
 }
-.experience-item > .header > .right {
+.projects-item > .header > .right {
     /* Flex */
     display: flex;
     flex-direction: column;
@@ -20,29 +20,29 @@
 }
 
 /* Item Classes */
-.experience-item > .header > .left > .title {
+.projects-item > .header > .left > .title {
     /* Text */
     color: var(--text-blue);
     font-weight: bold;
     text-decoration: none;
 }
-.experience-item > .header > .left > .place {
+.projects-item > .header > .left > .place {
     /* Text */
     color: var(--text-black);
     text-decoration: none;
 }
-.experience-item > .header > .right > .date {
+.projects-item > .header > .right > .date {
     /* Text */
     color: var(--text-black);
     font-style: italic;
     text-decoration: none;
 }
-.experience-item > .list {
+.projects-item > .list {
     list-style-type: ">   ";
     margin: var(--list-padding) 0 0 0;
     line-height: var(--list-spacing);
 }
-.experience-item > p {
+.projects-item > p {
     margin: var(--list-padding) var(--list-padding) 0 var(--list-padding);
     line-height: var(--list-spacing);
 }
