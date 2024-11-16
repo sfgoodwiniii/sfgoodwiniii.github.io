@@ -39,11 +39,6 @@
 }
 .experience-item > .list {
     list-style-type: ">   ";
-    margin: var(--list-padding) 0;
+    margin: var(--list-padding) 0 0 0;
     line-height: var(--list-spacing);
-}
-
-#experience-2 > h2 {
-    /* Padding above */
-    margin-top: 0.35in;
 }

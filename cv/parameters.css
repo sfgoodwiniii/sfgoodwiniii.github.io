@@ -1,17 +1,7 @@
 :root {
-    /* Header Padding */
-    --header-top-padding: 1.5cm;
-    --header-side-padding: 2.0cm;
-    --header-bottom-padding: 0.8cm;
-
-    /* Body Padding */
-    --body-top-padding: 0.30cm;
-    --body-side-padding: 1.25cm;
-    --body-bottom-padding: 0.30cm;
-
-    /* List Styling */
-    --list-padding: 0.5em;
-    --list-spacing: 1.15em;
+    /* Background Colors */
+    --background: rgb(204,204,204);
+    --page-background: white;
 
     /* Text Colors */
     --text-black: #000000;
@@ -22,4 +12,14 @@
     --text-size-header: 1.5em;
     --text-size-section: 1.2em;
     --text-size-subsection: 1.0em;
+
+    /* Document Styling */
+    --page-width: 8.5in;
+    --page-height: 11.0in;
+    --page-margin: 0.60in;
+
+    /* Section Paddings */
+    --section-padding: 0.5cm;
+    --list-padding: 0.5em;
+    --list-spacing: 1.15em;
 }

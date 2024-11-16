@@ -1,0 +1,31 @@
+/* Sections Styling */
+.section > h2 {
+    /* Size */
+    margin: 0;
+    padding: 0;
+
+    /* Text */
+    font-size: var(--text-size-section);
+    font-weight: bold;
+    color: var(--text-black);
+}
+.section > hr {
+    /* Size */
+    border-top: 2px solid var(--text-black);
+    margin-bottom: calc(0.5em * 1.25);
+}
+.section > p {
+    /* Size */
+    margin: 0;
+    padding: 0;
+}
+
+.section-list {}
+.section-list > hr {
+    /* Size */
+    border-top: 1px solid var(--text-gray);
+
+    /* Spacing */
+    margin-top: calc(0.5em * 1.25);
+    margin-bottom: calc(0.5em);
+}

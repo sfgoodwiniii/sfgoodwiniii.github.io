@@ -1,0 +1,56 @@
+@media print {
+    @page {
+        size: 8.5in 11in;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--background);
+    }
+
+    page {
+        width: calc(var(--page-width) - 2 * var(--page-margin));
+        padding: 0;
+        background: var(--page-background);
+        page-break-after: always;
+
+        /* Flex */
+        display: flex;
+        flex-direction: column;
+        gap: var(--section-padding);
+    }
+
+    .experience-item, .education-item, .skills-item, .award-item {
+        /* Avoid breaking inside these elements */
+        page-break-inside: avoid;
+    }
+}
+
+
+
+
+/*!* Page Styling *!*/
+/*body {*/
+/*    !* Size *!*/
+/*    margin: 0;*/
+
+/*    !* Color *!*/
+/*    background: var(--background);*/
+
+/*    !* Flex *!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+
+/*page {*/
+/*    !* Size *!*/
+/*    width: calc(var(--page-width) - 2 * var(--page-margin));*/
+/*    padding: var(--page-margin);*/
+
+/*    !* Color *!*/
+/*    background: var(--page-background);*/
+
+
+/*}*/

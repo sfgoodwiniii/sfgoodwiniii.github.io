@@ -1,8 +1,5 @@
 /* Awards Boxes */
 #awards {
-    /* Size */
-    padding-top: var(--header-top-padding);
-
     /* Flex */
     display: flex;
     flex-direction: column;

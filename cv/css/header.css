@@ -1,8 +1,5 @@
 /* Header Boxes */
 #header {
-    /* Size */
-    padding: var(--header-top-padding) var(--header-side-padding) var(--body-bottom-padding);
-
     /* Flex */
     display: flex;
     flex-direction: row;
@@ -69,6 +66,8 @@
 }
 #header-quotation {
     /* Size */
+    padding: 0;
+    margin: 0;
 
     /* Flex */
     display: flex;

@@ -1,24 +1,29 @@
 /* Page Styling */
 body {
-    background: rgb(204,204,204);
-    width: 8.5in;
-    height: 11.0in;
-    margin: 0 auto;
-}
-page {
-    background: white;
-    display: block;
-    margin: 0 auto 0.5cm;
-    position: relative;
-}
-page[size="A4"] {
-    width: 8.5in;
-    height: 11.0in;
-}
-@page {
-    size: 8.5in 11.0in;
-    margin: 0mm;
-}
-.page {
+    /* Size */
+    margin: 0;
 
+    /* Color */
+    background: var(--background);
+
+    /* Flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+page {
+    /* Size */
+    width: calc(var(--page-width) - 2 * var(--page-margin));
+    padding: var(--page-margin);
+
+    /* Color */
+    background: var(--page-background);
+
+    /* Flex */
+    /* Make it a 1 column that spans the whole page */
+    display: flex;
+    flex-direction: column;
+    /* Space out each item in the column by a fixed width */
+    gap: var(--section-padding);
 }
