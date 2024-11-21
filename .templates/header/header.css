@@ -1,15 +1,21 @@
 /* Universal CSS Variables */
 :root {
-    /* Variables */
+    /* Universal */
+    --sdev-header__theme-transition: var(--theme-transition, 0.25s);
+
+    /* Header Box */
     --sdev-header__header-height: 50px;
     --sdev-header__header-padding: 15px 35px;
+
+    /* Directory Box */
     --sdev-header__directory-gap: 35px;
     --sdev-header__navbar-gap: 10px;
+
+    /* Settings Box */
     --sdev-header__settings-gap: 35px;
     --sdev-header__language-gap: 4px;
-    --sdev-header__theme-gap: 10px;
+    --sdev-header__theme-gap: 10px; /* Currently Unused */
     --sdev-header__theme-icon-transition: 0.75s;
-    --sdev-header__theme-transition: var(--theme-transition, 0.25s);
 }
 
 /* Box Classes */
@@ -31,11 +37,8 @@
     padding: var(--sdev-header__header-padding);
     margin: 0;
 
-    /* Color */
-    background-color: var(--background);
-
     /* Text */
-    color: var(--text);
+    color: var(--text, blue);
 
     /* Flex */
     display: flex;
@@ -69,7 +72,7 @@
 /* Item Classes */
 .sdev-header__nav-link {
     /* Text */
-    color: var(--text);
+    color: var(--text, red);
     text-decoration: none;
 
     /* Transition */
@@ -77,7 +80,7 @@
 }
 .sdev-header__nav-link:hover {
     /* Text */
-    color: var(--text-highlight);
+    color: var(--text-highlight, green);
 }
 .sdev-header__lang-link {
     /* Transition */

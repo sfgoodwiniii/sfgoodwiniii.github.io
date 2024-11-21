@@ -1,7 +1,7 @@
 // Constants
 DEFAULT_THEME = "dark";
-THEME_TOGGLE_HTML = document.getElementById("sdev-header__theme-icon");
-PAGE_BODY_HTML = document.getElementsByTagName("body")[0];
+_THEME_TOGGLE_HTML = document.getElementById("sdev-header__theme-icon");
+_PAGE_BODY_HTML = document.getElementsByTagName("body")[0];
 loadThemeStartup();
 
 // Page Startup
@@ -21,12 +21,12 @@ function switchTheme() {
 	if (current_theme === "dark") {
 		localStorage.setItem("theme", "light");  // Swap the theme in the local storage
 		loadLightMode();                         // Load the light mode
-		PAGE_BODY_HTML.style.transition = "var(--theme-transition, 0.25s)";
+		_PAGE_BODY_HTML.style.transition = "var(--theme-transition, 0.25s)";
 	}
 	else if (current_theme === "light") {
 		localStorage.setItem("theme", "dark");  // Swap the theme in the local storage
 		loadDarkMode();                         // Load the dark mode
-		PAGE_BODY_HTML.style.transition = "var(--theme-transition, 0.25s)";
+		_PAGE_BODY_HTML.style.transition = "var(--theme-transition, 0.25s)";
 	}
 	else {
 		console.error("Invalid Theme: " + current_theme);
@@ -36,15 +36,15 @@ function switchTheme() {
 // Load Themes
 function loadDarkMode() {
 	console.debug("Selected Theme: Dark");
-	THEME_TOGGLE_HTML.src = "/.templates/header/images/moon.png";
-	THEME_TOGGLE_HTML.style.filter = "invert(100%)";
+	_THEME_TOGGLE_HTML.src = "/.templates/header/images/moon.png";
+	_THEME_TOGGLE_HTML.style.filter = "invert(100%)";
 	delLightMode();
 	setDarkMode();
 }
 function loadLightMode() {
 	console.debug("Selected Theme: Light");
-	THEME_TOGGLE_HTML.src = "/.templates/header/images/sun.png";
-	THEME_TOGGLE_HTML.style.filter = "invert(0%)";
+	_THEME_TOGGLE_HTML.src = "/.templates/header/images/sun.png";
+	_THEME_TOGGLE_HTML.style.filter = "invert(0%)";
 	delDarkMode();
 	setLightMode();
 }

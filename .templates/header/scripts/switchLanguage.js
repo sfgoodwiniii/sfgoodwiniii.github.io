@@ -1,7 +1,7 @@
 // Constants
 DEFAULT_LANGUAGE = "EN";
-LANGUAGE_PARENT_ID = "sdev-header__language";
-LANGUAGE_TEXT_HIGHLIGHT_CLASS = "sdev__text-highlight";
+_LANGUAGE_PARENT_ID = "sdev-header__language";
+_LANGUAGE_TEXT_HIGHLIGHT_CLASS = "sdev__text-highlight";
 loadLangStartup();
 
 // Page Startup
@@ -9,15 +9,15 @@ function loadLangStartup() {
 
 	// Add the highlight to the current language
 	const langID = fetchLocalStorage("lang", DEFAULT_LANGUAGE);
-	const langHTML = fetchObjectHTML(LANGUAGE_PARENT_ID, langID);
-		  langHTML.classList.add(LANGUAGE_TEXT_HIGHLIGHT_CLASS);
+	const langHTML = fetchObjectHTML(_LANGUAGE_PARENT_ID, langID);
+		  langHTML.classList.add(_LANGUAGE_TEXT_HIGHLIGHT_CLASS);
 
 	// Load the content for the language
 	try {
 		loadLangContent(langID);
 	} catch (error) {
 		console.error("Implementation of loadLangContent(langID) is missing.\nError: " + error);
-		debugLoadLangContent(langID);
+		debugPrint(langID);
 	}
 }
 
@@ -29,12 +29,12 @@ function switchLanguage(langID) {
 
 	// Remove the highlight from the previous language
 	const previousLangID = fetchLocalStorage("lang");
-	const previousLangHTML = fetchObjectHTML(LANGUAGE_PARENT_ID, previousLangID);
-		  previousLangHTML.classList.remove(LANGUAGE_TEXT_HIGHLIGHT_CLASS);
+	const previousLangHTML = fetchObjectHTML(_LANGUAGE_PARENT_ID, previousLangID);
+		  previousLangHTML.classList.remove(_LANGUAGE_TEXT_HIGHLIGHT_CLASS);
 
 	// Highlight the clicked language
-	const langHTML = fetchObjectHTML(LANGUAGE_PARENT_ID, langID);
-		  langHTML.classList.add(LANGUAGE_TEXT_HIGHLIGHT_CLASS);
+	const langHTML = fetchObjectHTML(_LANGUAGE_PARENT_ID, langID);
+		  langHTML.classList.add(_LANGUAGE_TEXT_HIGHLIGHT_CLASS);
 
 	// Save the selected language to the local storage
 	localStorage.setItem("lang", langID);
@@ -44,16 +44,16 @@ function switchLanguage(langID) {
 		loadLangContent(langID);
 	} catch (error) {
 		console.error("Implementation of loadLangContent(langID) is missing.\nError: " + error);
-		debugLoadLangContent(langID);
+		debugPrint(langID);
 	}
 }
 
 // Debug Language Content
-function debugLoadLangContent(langID) {
+function debugPrint(langID) {
 	const langIDtoContent = {
 		"EN": "English",
 		"ES": "Spanish",
 		"FR": "French"
 	};
-	console.debug("[HEADER] Selected Language: " + langIDtoContent[langID]);
+	console.debug("[switchLanguages.js] Selected Language: " + langIDtoContent[langID]);
 }
