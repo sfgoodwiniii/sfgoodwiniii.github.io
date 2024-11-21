@@ -7,7 +7,7 @@
 
 /* Box Classes */
 .tab-bar {
-    /* Geometry */
+    /* Size */
     height: 50px;
     padding: 0 var(--page-padding);
     margin: 0;
@@ -22,6 +22,9 @@
 
 /* Item Classes */
 .tab {
+    /* Size */
+    height: 20px;
+
     /* Transition */
     transition: var(--theme-transition, 0.25s);
 }
