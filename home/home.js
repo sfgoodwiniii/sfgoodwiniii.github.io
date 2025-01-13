@@ -1,9 +1,16 @@
-// [TODO Add Actual Code] Load the content for the language
-function loadLangContent(langID) {
+// [TODO Add Actual Code] Load the content
+function loadLanguageContent(langID) {
     const langIDtoContent = {
         "EN": "English",
         "ES": "Spanish",
         "FR": "French"
     };
-    console.debug("[HOME] Selected Language: " + langIDtoContent[langID]);
+    console.log("[HOME] Selected Language: " + langIDtoContent[langID]);
+}
+function loadThemeContent(themeID) {
+    const themeIDtoContent = {
+        "dark": "Dark",
+        "light": "Light"
+    };
+    console.log("[HOME] Selected Theme: " + themeIDtoContent[themeID]);
 }

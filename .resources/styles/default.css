@@ -18,7 +18,7 @@ body {
 }
 
 /* Overriding Classes */
-.sdev__text-highlight {
+.sdev__text-highlight[aria-selected] {
     /* Text */
     color: var(--text-highlight) !important;
 

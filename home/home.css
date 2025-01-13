@@ -35,6 +35,10 @@
     /* Cursor */
     cursor: pointer;
 }
+.tab[aria-current="tab"] {
+    /* Text */
+    color: var(--text-highlight);
+}
 
 /* Item Objects */
 #title {

@@ -3,7 +3,6 @@ This template is used for creating a website header at the top of my webpages.
 
 ## Usage
 To use this template, place the following code in the header of your HTML file:
-
 ```html
 <!-- Load Template HTML -->
 <script
@@ -14,9 +13,7 @@ To use this template, place the following code in the header of your HTML file:
 <script defer>
     $(function () {
         $("#page-header").load("/.templates/header/header.html",
-            function () {
-                $("#sdev-header__nav_XXXX").addClass("sdev__text-highlight");
-            });
+            function(){ $("#sdev-header__nav-PAGE").attr("aria-current", "page"); });
     });
 </script>
 ```

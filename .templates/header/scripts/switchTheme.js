@@ -1,41 +1,39 @@
 // Public Functions
 function sdev_header__startTheme() {
-
-	// Fetch the stored theme
 	const DEFAULT_THEME = "dark";
 	const themeID = fetchLocalStorage("theme", DEFAULT_THEME);
-
-	// Load the content for the theme
 	_sdev_header__loadThemeContent(themeID)
 }
 function sdev_header__switchTheme(themeID) {
-
-	// Fetch the current theme
+	// Check if the theme is already selected
 	const currentThemeID = fetchLocalStorage("theme");
+	if (currentThemeID === themeID) { return; }
 
-	// Load the content for the theme
+	// Save theme and load content
+	localStorage.setItem("theme", themeID);
 	_sdev_header__loadThemeContent(themeID);
 }
 
 // Private Functions
 function _sdev_header__loadThemeContent(themeID) {
-
-	// Load the content for the theme
-	_sdev_header__themeLinkReplace(themeID);
-
-	// Print the selected theme
-	_sdev_header__themeDebugPrint(themeID);
-}
-function _sdev_header__themeLinkReplace(themeID) {
+	// Header theme handler
 	const linkHTML = document.getElementById("sdev-header__page-theme")
 	      linkHTML.href = "/.resources/styles/theme_" + themeID + ".css";
+
+	// Page theme handler
+	try {
+		loadThemeContent(themeID);
+	} catch (error) {
+		console.warn("Implementation of loadThemeContent(themeID) is missing.\nError: " + error);
+		_sdev_header_loadThemeDebugPrint(themeID);
+	}
 }
-function _sdev_header__themeDebugPrint(themeID) {
+function _sdev_header_loadThemeDebugPrint(themeID) {
 	const themeIDtoContent = {
 		"dark": "Dark",
-		"light": "Light",
+		"light": "Light"
 	};
-	console.debug("[switchTheme.js] Selected Theme: " + themeIDtoContent[themeID]);
+	console.log("header/switchTheme.js] Selected Theme: " + themeIDtoContent[themeID]);
 }
 
 // Startup
@@ -44,10 +42,12 @@ sdev_header__startTheme();
 
 
 // Dark-Light Integration (REMOVE LATER)
+// This is the old toggle solution for the dark-light theme. It is not recommended to use this solution.
+// Later it will be replaced with a gear settings menu on the side to select the theme.
 function sdev_header__toggleTheme() {
 	const currentThemeID = fetchLocalStorage("theme");
 	const newThemeID = currentThemeID === "dark" ? "light" : "dark";
-	sdev_header__switchTheme(newThemeID);
+	_sdev_header__loadThemeContent(newThemeID);
 	localStorage.setItem("theme", newThemeID);
 
 	const THEME_TOGGLE_HTML = document.getElementById("sdev-header__theme-icon");

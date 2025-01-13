@@ -14,7 +14,6 @@
     /* Settings Box */
     --sdev-header__settings-gap: 35px;
     --sdev-header__language-gap: 4px;
-    --sdev-header__theme-gap: 10px; /* Currently Unused */
     --sdev-header__theme-icon-transition: 0.75s;
 }
 
@@ -31,7 +30,7 @@
 }
 
 /* Box Objects */
-#sdev-header__header {
+#sdev-header__header-container {
     /* Geometry */
     height: var(--sdev-header__header-height);
     padding: var(--sdev-header__header-padding);
@@ -48,29 +47,26 @@
     /* Transition */
     transition: var(--sdev-header__theme-transition);
 }
-#sdev-header__directory {
+#sdev-header__directory-container {
     /* Flex */
     gap: var(--sdev-header__directory-gap);
 }
-#sdev-header__settings {
+#sdev-header__settings-container {
     /* Flex */
     gap: var(--sdev-header__settings-gap);
 }
-#sdev-header__language {
+#sdev-header__language-container {
     /* Flex */
     gap: var(--sdev-header__language-gap);
 }
-#sdev-header__theme {
-    /* Flex */
-    gap: var(--sdev-header__theme-gap);
-}
-#sdev-header__navbar {
+#sdev-header__theme-container {}
+#sdev-header__navigation-container {
     /* Flex */
     gap: var(--sdev-header__navbar-gap);
 }
 
 /* Item Classes */
-.sdev-header__nav-link {
+.sdev-header__navigation-link {
     /* Text */
     color: var(--text, red);
     text-decoration: none;
@@ -78,17 +74,25 @@
     /* Transition */
     transition: var(--sdev-header__theme-transition);
 }
-.sdev-header__nav-link:hover {
+.sdev-header__navigation-link:hover {
     /* Text */
     color: var(--text-highlight, green);
 }
-.sdev-header__lang-link {
+.sdev-header__navigation-link[aria-current="page"] {
+    /* Text */
+    color: var(--text-highlight, green);
+}
+.sdev-header__language-link {
     /* Transition */
     transition: var(--sdev-header__theme-transition);
 }
-.sdev-header__lang-link:hover {
+.sdev-header__language-link:hover {
     /* Cursor */
     cursor: pointer;
+}
+.sdev-header__language-link[aria-current="language"] {
+    /* Text */
+    color: var(--text-highlight, green);
 }
 .sdev-header__theme-link {
     /* Transition */
@@ -97,6 +101,10 @@
 .sdev-header__theme-link:hover {
     /* Cursor */
     cursor: pointer;
+}
+.sdev-header__theme-link[aria-current="theme"] {
+    /* Transition */
+    color: var(--text-highlight, green);
 }
 
 /* Item Objects */

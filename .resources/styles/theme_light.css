@@ -6,9 +6,12 @@
 }
 
 /* Increased accessibility  */
-.sdev__text-highlight {
+.sdev-header__navigation-link[aria-current="page"],
+.sdev-header__language-link[aria-current="language"],
+.sdev-header__theme-link[aria-current="theme"]
+{
     text-decoration: underline !important;
 }
-.sdev-header__nav-link:hover {
+.sdev-header__navigation-link:hover {
     text-decoration: underline;
 }

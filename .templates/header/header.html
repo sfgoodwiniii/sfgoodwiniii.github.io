@@ -43,8 +43,9 @@
     <!-- Header Style -->
     <link rel="stylesheet" href="/.templates/header/header.css">
 
-    <!-- Header Script(s) -->
-    <script src="/.resources/scripts/fetching.js"></script>
+    <!-- Header Scripts -->
+    <script src="/.templates/library/fetching.js"></script>
+    <script src="/.templates/library/highlighting.js"></script>
     <script defer src="/.templates/header/header.js"></script>
     <script defer src="/.templates/header/scripts/switchTheme.js"></script>
     <script defer src="/.templates/header/scripts/switchLanguage.js"></script>
@@ -52,29 +53,34 @@
 
 
 <body>
-<div id="sdev-header__header">
+<div id="sdev-header__header-container">
 
     <!-- Directory Container -->
-    <div id="sdev-header__directory" class="sdev-header__padded-row-list">
+    <div id="sdev-header__directory-container" class="sdev-header__padded-row-list">
         <img id="sdev-header__directory-icon" src="/.resources/icons/favicon.ico" alt="Logo" onclick="sdev_header__favicon()">
-        <nav id="sdev-header__navbar" class="sdev-header__padded-row-list">
-            <a class="sdev-header__nav-link" id="sdev-header__nav-home" href="/home">Home</a>|
-            <a class="sdev-header__nav-link" id="sdev-header__nav-about-me" href="/about-me">About</a>|
-            <a class="sdev-header__nav-link" id="sdev-header__nav-portfolio" href="/portfolio">Portfolio</a>|
-            <a class="sdev-header__nav-link" id="sdev-header__nav-contact" href="/contact">Contact</a>|
-            <a class="sdev-header__nav-link" id="sdev-header__nav-console" href="/console">Console</a>
+        <nav id="sdev-header__navigation-container" class="sdev-header__padded-row-list">
+            <a class="sdev-header__navigation-link" id="sdev-header__nav-home" href="/home">Home</a>|
+            <a class="sdev-header__navigation-link" id="sdev-header__nav-about-me" href="/about-me">About</a>|
+            <a class="sdev-header__navigation-link" id="sdev-header__nav-portfolio" href="/portfolio">Portfolio</a>|
+            <a class="sdev-header__navigation-link" id="sdev-header__nav-contact" href="/contact">Contact</a>|
+            <a class="sdev-header__navigation-link" id="sdev-header__nav-console" href="/console">Console</a>
         </nav>
     </div>
 
     <!-- Settings Container -->
-    <div id="sdev-header__settings" class="sdev-header__padded-row-list">
-        <div id="sdev-header__language" class="sdev-header__padded-row-list">
-            <a class="sdev-header__lang-link" id="sdev-header__lang-EN" onclick="sdev_header__switchLanguage('EN')">EN</a>|
-            <a class="sdev-header__lang-link" id="sdev-header__lang-ES" onclick="sdev_header__switchLanguage('ES')">ES</a>|
-            <a class="sdev-header__lang-link" id="sdev-header__lang-FR" onclick="sdev_header__switchLanguage('FR')">FR</a>
+    <div id="sdev-header__settings-container" class="sdev-header__padded-row-list">
+        <div id="sdev-header__language-container" class="sdev-header__padded-row-list">
+            <a class="sdev-header__language-link" id="sdev-header__lang-EN"
+               onclick="sdev_header__switchLanguage('EN')">EN</a>|
+            <a class="sdev-header__language-link" id="sdev-header__lang-ES"
+               onclick="sdev_header__switchLanguage('ES')">ES</a>|
+            <a class="sdev-header__language-link" id="sdev-header__lang-FR"
+               onclick="sdev_header__switchLanguage('FR')">FR</a>
         </div>
-        <div id="sdev-header__theme" class="sdev-header__padded-row-list">
-            <img class="sdev-header__theme-link" id="sdev-header__theme-icon" src="/.templates/header/images/sun.png" alt="Toggle Darkmode" onclick="sdev_header__toggleTheme()">
+        <div id="sdev-header__theme-container" class="sdev-header__padded-row-list">
+            <img id="sdev-header__theme-icon" class="sdev-header__theme-link"
+                 src="/.templates/header/images/sun.png" alt="Toggle Darkmode"
+                 onclick="sdev_header__toggleTheme()">
         </div>
     </div>
 

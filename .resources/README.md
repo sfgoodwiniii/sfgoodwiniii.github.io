@@ -1,2 +1,1 @@
 These are resources that are shared throughout the website. They are not specific to any one page, but are used in multiple places. For example, the CSS file is used on every page, so it is stored here. 
-```

@@ -6,13 +6,9 @@ loadTab();
 
 // Page Startup
 function loadTab() {
-
-	// Add the highlight to the current tab
 	const tabID = fetchLocalStorage("tab", DEFAULT_TAB);
 	const tabHTML = fetchObjectHTML(TAB_PARENT_ID, tabID);
-	      tabHTML.classList.add(TAB_TEXT_HIGHLIGHT_CLASS);
-
-	// Load the content for the tab
+	highlightHTMLObject(tabHTML, "tab", OPERATION.ADD);
 	loadTabContent(tabID);
 }
 
@@ -25,11 +21,11 @@ function switchTab(childPseudoID) {
 	// Remove the highlight from the previous tab
 	const previousTabID = fetchLocalStorage("tab");
 	const previousTabHTML = fetchObjectHTML(TAB_PARENT_ID, previousTabID);
-	      previousTabHTML.classList.remove(TAB_TEXT_HIGHLIGHT_CLASS);
+	highlightHTMLObject(previousTabHTML, "tab", OPERATION.REMOVE);
 
 	// Highlight the clicked tab
 	const tabHTML = fetchObjectHTML(TAB_PARENT_ID, childPseudoID);
-	      tabHTML.classList.add(TAB_TEXT_HIGHLIGHT_CLASS);
+	highlightHTMLObject(tabHTML, "tab", OPERATION.ADD);
 
 	// Save the selected tab to the local storage
 	localStorage.setItem("tab", childPseudoID);

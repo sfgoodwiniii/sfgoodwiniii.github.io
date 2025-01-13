@@ -3,7 +3,7 @@
 
 
 <head>
-    <!-- Page Adjustments -->
+    <!-- Page Overrides -->
     <title>Welcome!</title>
 
     <!-- Load Template HTML -->
@@ -14,7 +14,7 @@
     </script>
     <script defer>
 		$(function(){ $("#page-header").load("/.templates/header/header.html",
-            function(){ $("#sdev-header__nav-home").addClass("sdev__text-highlight"); });
+            function(){ $("#sdev-header__nav-home").attr("aria-current", "page"); });
         });
 		// $(function(){ $("#page-footer").load("/.templates/footer/footer.html"); });
     </script>
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/home/home.css">
 
     <!-- Page Script(s) -->
-    <script src="/.resources/scripts/fetching.js"></script>
+    <script src="/.templates/library/fetching.js"></script>
     <script defer src="/home/home.js"></script>
     <script defer src="/home/switchTab.js"></script>
 </head>
